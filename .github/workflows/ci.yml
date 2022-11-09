@@ -22,10 +22,29 @@ jobs:
           python-version: '3.x'
 
       - name: Install test dependencies.
-        run: pip3 install yamllint ansible
+        run: pip3 install yamllint
 
       - name: Lint all the YAMLs.
         run: yamllint .
+
+  benchmark:
+    name: Benchmark
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the codebase.
+        uses: actions/checkout@v2
+
+      - name: Set up Python 3.
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install test dependencies.
+        run: pip3 install ansible
+
+      - name: Set up files for the test.
+        run: cp example.hosts.ini hosts.ini
 
       - name: Run the HPL benchmark playbook without networking.
         run: ansible-playbook main.yml --tags "setup,benchmark"

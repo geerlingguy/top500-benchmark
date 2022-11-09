@@ -12,6 +12,16 @@ Phoronix Test Suite includes [HPL Linpack](https://openbenchmarking.org/test/pts
 
 When I initially started down this journey, the PTS versions didn't play nicely with the Pi, especially when clustered. And the PTS versions don't seem to support clustered usage at all!
 
+## Supported OSes
+
+Currently supported OSes:
+
+  - Ubuntu (20.04+)
+  - Raspberry Pi OS (11+)
+  - Debian (11+)
+
+Other OSes may need a few tweaks to work correctly. You can also run the playbook inside Docker (see the note under 'Benchmarking - Single Node'), but performance will be artificially limited.
+
 ## Benchmarking - Cluster
 
 Make sure you have Ansible installed (`pip3 install ansible`), then set up a `hosts.ini` file in this directory based on the `example.hosts.ini` file.
@@ -41,7 +51,7 @@ mpirun -f cluster-hosts ./xhpl
 
 > The configuration here was tested on smaller 1, 4, and 6-node clusters with 6-64 GB of RAM. Some settings in the `config.yml` file that affect the generated `HPL.dat` file may need diffent tuning for different cluster layouts!
 
-### Benchmarking a Single Node
+### Benchmarking - Single Node
 
 To run locally on a single node, clone or download this repository to the node where you want to run HPL. Make sure the `hosts.ini` is set up with the default options (with just one node, `127.0.0.1`).
 
