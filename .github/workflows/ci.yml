@@ -30,11 +30,12 @@ jobs:
   benchmark:
     name: Benchmark
     runs-on: ubuntu-latest
+
     container:
       image: geerlingguy/docker-ubuntu2204-ansible:latest
       volumes:
         - ${GITHUB_WORKSPACE}:/code
-      environment:
+      env:
         ANSIBLE_FORCE_COLOR: "true"
 
     steps:
