@@ -33,8 +33,6 @@ jobs:
 
     container:
       image: geerlingguy/docker-ubuntu2204-ansible:latest
-      volumes:
-        - ${GITHUB_WORKSPACE}:/code
       env:
         ANSIBLE_FORCE_COLOR: "true"
 
@@ -43,7 +41,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Set up files for the test.
-        run: cd /code && cp example.hosts.ini hosts.ini
+        run: cp example.hosts.ini hosts.ini
 
       - name: Run the HPL benchmark playbook without networking.
-        run: cd /code && ansible-playbook main.yml --tags "setup,benchmark"
+        run: ansible-playbook main.yml --tags "setup,benchmark"
