@@ -30,21 +30,19 @@ jobs:
   benchmark:
     name: Benchmark
     runs-on: ubuntu-latest
+    container:
+      image: geerlingguy/docker-ubuntu2204-ansible:latest
+      volumes:
+        - ${GITHUB_WORKSPACE}:/code
+      environment:
+        ANSIBLE_FORCE_COLOR: "true"
 
     steps:
       - name: Check out the codebase.
         uses: actions/checkout@v2
 
-      - name: Set up Python 3.
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.x'
-
-      - name: Install test dependencies.
-        run: pip3 install ansible
-
       - name: Set up files for the test.
-        run: cp example.hosts.ini hosts.ini
+        run: cd /code && cp example.hosts.ini hosts.ini
 
       - name: Run the HPL benchmark playbook without networking.
-        run: ansible-playbook main.yml --tags "setup,benchmark"
+        run: cd /code && ansible-playbook main.yml --tags "setup,benchmark"

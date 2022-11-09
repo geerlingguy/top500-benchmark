@@ -13,14 +13,14 @@
 
   tasks:
     - name: Update apt cache.
-      apt:
+      ansible.builtin.apt:
         update_cache: true
         cache_valid_time: 600
       when: ansible_os_family == 'Debian'
       become: true
 
     - name: Install dependencies.
-      ansible.builtin.apt:
+      ansible.builtin.package:
         name:
           - gfortran
           - automake
