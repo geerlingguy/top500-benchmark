@@ -1,0 +1,15 @@
+---
+# Working directory where HPL and associated applications will be compiled.
+hpl_root: /home/pi
+
+# HPL.dat configuration options.
+# See: https://www.advancedclustering.com/act_kb/tune-hpl-dat-file/
+# See also: https://hpl-calculator.sourceforge.net/HPL-HowTo.pdf
+nodecount: "{{ ansible_play_hosts | length | int }}"
+ram_in_gb: "{{ ( ansible_memtotal_mb / 1024 * 0.75 ) | int | abs }}"
+hpl_dat_opts:
+  # sqrt((Memory in GB * 1024 * 1024 * 1024 * Node count) / 8) * 0.9
+  Ns: "{{ (((((ram_in_gb | int) * 1024 * 1024 * 1024 * (nodecount|int)) / 8) | root) * 0.90) | int }}"
+  NBs: 192
+  Ps: 2
+  Qs: 2

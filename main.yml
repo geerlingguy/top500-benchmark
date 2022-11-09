@@ -1,0 +1,207 @@
+---
+# Automated setup of distributed Linpack benchmark.
+#
+# Inspired by: https://mikejmcfarlane.github.io/blog/2020/09/17/High-Performance-Linpack-for-raspberry-pi-supercomputer
+# See also: https://www.sci-pi.org.uk/bench/linpack.html
+
+- name: Install linpack benchmark.
+  hosts: cluster
+  become: false
+  tags: ['setup']
+
+  vars_files: ['config.yml']
+
+  tasks:
+    - name: Update apt cache.
+      apt:
+        update_cache: true
+        cache_valid_time: 600
+      when: ansible_os_family == 'Debian'
+
+    - name: Install dependencies.
+      ansible.builtin.apt:
+        name:
+          - gfortran
+          - automake
+        state: present
+      become: true
+
+    - name: Create required temporary directories.
+      ansible.builtin.file:
+        path: "{{ item }}"
+        state: directory
+        mode: 0755
+      loop:
+        - "{{ hpl_root }}/tmp"
+        - "{{ hpl_root }}/tmp/atlas-build"
+
+    - name: Download MPI (Message Passing Interface).
+      ansible.builtin.unarchive:
+        src: https://www.mpich.org/static/downloads/3.4.2/mpich-3.4.2.tar.gz
+        dest: "{{ hpl_root }}/tmp"
+        remote_src: true
+        creates: "{{ hpl_root }}/tmp/mpich-3.4.2/README"
+
+    - name: Build MPI (takes a while).
+      ansible.builtin.command: "{{ item }}"
+      args:
+        chdir: "{{ hpl_root }}/tmp/mpich-3.4.2"
+        creates: "{{ hpl_root }}/tmp/COMPILE_MPI_COMPLETE"
+      loop:
+        - ./configure --with-device=ch3:sock FFLAGS=-fallow-argument-mismatch
+        - make -j4
+
+    - name: Install MPI.
+      ansible.builtin.command: make install
+      args:
+        chdir: "{{ hpl_root }}/tmp/mpich-3.4.2"
+        creates: "{{ hpl_root }}/tmp/COMPILE_MPI_COMPLETE"
+      become: true
+
+    - name: Create 'COMPILE_MPI_COMPLETE' file.
+      file:
+        path: "{{ hpl_root }}/tmp/COMPILE_MPI_COMPLETE"
+        state: touch
+        mode: 0644
+
+    - name: Test if we can set CPU scaling parameters.
+      ansible.builtin.command: >-
+        ls /sys/devices/system/cpu/cpu0/cpufreq
+      failed_when: false
+      changed_when: false
+      register: cpufreq_exists
+
+    # Note: There was no simpler way to do this besides `shell`.
+    - name: Ensure CPU scaling is set to 'performance'.
+      ansible.builtin.shell: >-
+        echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+      when: cpufreq_exists.rc == 0
+
+    - name: Download ATLAS linear algebra library.
+      ansible.builtin.unarchive:
+        src: https://sourceforge.net/projects/math-atlas/files/Stable/3.10.3/atlas3.10.3.tar.bz2
+        dest: "{{ hpl_root }}/tmp"
+        remote_src: true
+        creates: "{{ hpl_root }}/tmp/ATLAS/README"
+
+    - name: Install ATLAS (takes a LONG time).
+      ansible.builtin.command: "{{ item }}"
+      args:
+        chdir: "{{ hpl_root }}/tmp/atlas-build"
+        creates: "{{ hpl_root }}/tmp/COMPILE_ATLAS_COMPLETE"
+      loop:
+        - ../ATLAS/configure
+        - make
+
+    - name: Create 'COMPILE_ATLAS_COMPLETE' file.
+      file:
+        path: "{{ hpl_root }}/tmp/COMPILE_ATLAS_COMPLETE"
+        state: touch
+        mode: 0644
+
+    - name: Download HPL (High Performance Linpack).
+      ansible.builtin.unarchive:
+        src: http://www.netlib.org/benchmark/hpl/hpl-2.3.tar.gz
+        dest: "{{ hpl_root }}/tmp"
+        remote_src: true
+        creates: "{{ hpl_root }}/tmp/hpl-2.3/README"
+
+    - name: Set up HPL makefile.
+      ansible.builtin.shell: sh make_generic
+      args:
+        chdir: "{{ hpl_root }}/tmp/hpl-2.3/setup"
+        creates: "{{ hpl_root }}/tmp/COMPILE_HPL_COMPLETE"
+
+    - name: Copy rpi makefile into place.
+      ansible.builtin.template:
+        src: templates/benchmark-Make.rpi.j2
+        dest: "{{ hpl_root }}/tmp/hpl-2.3/Make.rpi"
+        mode: 0644
+
+    - name: Install HPL.
+      ansible.builtin.command: >-
+        make arch=rpi
+      args:
+        chdir: "{{ hpl_root }}/tmp/hpl-2.3"
+        creates: "{{ hpl_root }}/tmp/COMPILE_HPL_COMPLETE"
+
+    - name: Create COMPILE_HPL_COMPLETE file.
+      ansible.builtin.file:
+        path: "{{ hpl_root }}/tmp/COMPILE_HPL_COMPLETE"
+        state: touch
+        mode: 0644
+
+# See: https://github.com/geerlingguy/top500-benchmark/issues/1
+- name: Configure SSH connections between nodes.
+  hosts: cluster
+  become: false
+  tags: ['ssh']
+
+  vars_files: ['config.yml']
+  vars:
+    host_ips: []
+
+  tasks:
+    - name: Generate an OpenSSH keypair.
+      community.crypto.openssh_keypair:
+        path: /home/pi/.ssh/id_rsa
+        size: 2048
+
+    - name: Read out ssh pubkey from each host.
+      ansible.builtin.command: cat /home/pi/.ssh/id_rsa.pub
+      changed_when: false
+      register: ssh_pubkey
+
+    - name: Combine pubkeys into single list.
+      ansible.builtin.set_fact:
+        combined_ssh_pubkeys: "{{ ansible_play_hosts | map('extract', hostvars, 'ssh_pubkey') | map(attribute='stdout') | list }}"
+      run_once: true
+
+    - name: Write all pubkeys to each host.
+      ansible.posix.authorized_key:
+        user: pi
+        state: present
+        key: "{{ item }}"
+      loop: "{{ combined_ssh_pubkeys }}"
+
+    - name: Generate list of host IP addresses.
+      ansible.builtin.set_fact:
+        host_ips: "{{ host_ips + [ hostvars[item].ansible_default_ipv4.address ] }}"
+      loop: "{{ groups['cluster'] }}"
+
+    - name: Accept hostkeys for each host on each host.
+      ansible.builtin.command: >-
+        ssh pi@{{ item }} -o StrictHostKeyChecking=accept-new date
+      loop: "{{ host_ips }}"
+
+- name: Run linpack benchmark.
+  hosts: cluster
+  become: false
+  tags: ['benchmark']
+
+  vars_files: ['config.yml']
+
+  tasks:
+    - name: Create a file describing nodes for MPI execution.
+      ansible.builtin.template:
+        src: templates/mpi-node-config.j2
+        dest: "{{ hpl_root }}/tmp/hpl-2.3/bin/rpi/cluster-hosts"
+        mode: 0644
+
+    # Template originally generated using this website:
+    # https://www.advancedclustering.com/act_kb/tune-hpl-dat-file/
+    - name: Create HPL.dat file.
+      ansible.builtin.template:
+        src: templates/HPL.dat.j2
+        dest: "{{ hpl_root }}/tmp/hpl-2.3/bin/rpi/HPL.dat"
+        mode: 0644
+
+    - name: Run the benchmark.
+      ansible.builtin.command: mpirun -f cluster-hosts ./xhpl
+      args:
+        chdir: "{{ hpl_root }}/tmp/hpl-2.3/bin/rpi"
+      register: mpirun_output
+      run_once: true
+
+    - name: Output the results.
+      debug: var=mpirun_output.stdout
