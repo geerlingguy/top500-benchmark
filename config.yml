@@ -1,6 +1,6 @@
 ---
 # Working directory where HPL and associated applications will be compiled.
-hpl_root: /home/pi
+hpl_root: /opt/top500
 
 # HPL.dat configuration options.
 # See: https://www.advancedclustering.com/act_kb/tune-hpl-dat-file/

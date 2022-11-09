@@ -71,10 +71,11 @@ ansible-playbook main.yml --tags "setup,benchmark"
 
 ## Results
 
-In my testing on Raspberry Pi OS Bullseye, in November 2021, I got the following results:
+Here are a few of the results I've acquired in my testing:
 
-| Benchmark | Configuration | Result | Wattage | Gflops/W |
-| --- | --- | --- | --- | --- |
-| HPL (1.5 GHz default clock) | Turing Pi 2 (4x CM4) | 44.942 Gflops | 24.5W | 1.83 Gflops/W |
-| HPL (2.0 GHz overclock) | Turing Pi 2 (4x CM4) | 51.327 Gflops | 33W | 1.54 Gflops/W |
-| HPL (1.5 GHz default clock) | DeskPi Super6c (6x CM4) | TODO Gflops | TODOW | TODO Gflops/W |
+| Configuration | Result | Wattage | Gflops/W |
+|--- |--- |--- |--- |
+| Turing Pi 2 (4x CM4 @ 1.5 GHz) | 44.942 Gflops | 24.5W | 1.83 Gflops/W |
+| Turing Pi 2 (4x CM4 @ 2.0 GHz) | 51.327 Gflops | 33W | 1.54 Gflops/W |
+| DeskPi Super6c (6x CM4 @ 1.5 GHz) | TODO Gflops | TODOW | TODO Gflops/W |
+| M2 MacBook Air (1x M2 @ 3.5 GHz, in Docker) | 104.68 Gflops | TODOW | TODO Gflops/W |
