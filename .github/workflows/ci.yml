@@ -43,5 +43,5 @@ jobs:
       - name: Set up files for the test.
         run: cp example.hosts.ini hosts.ini
 
-      - name: Run the HPL benchmark playbook without networking.
-        run: ansible-playbook main.yml --tags "setup,benchmark"
+      - name: Check the syntax of the HPL benchmark playbook.
+        run: ansible-playbook main.yml --syntax-check
