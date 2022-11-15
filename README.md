@@ -24,11 +24,14 @@ Other OSes may need a few tweaks to work correctly. You can also run the playboo
 
 ## Benchmarking - Cluster
 
-Make sure you have Ansible installed (`pip3 install ansible`), then set up a `hosts.ini` file in this directory based on the `example.hosts.ini` file.
+Make sure you have Ansible installed (`pip3 install ansible`), then copy the following files:
+
+  - `cp example.hosts.ini hosts.ini`: This is an inventory of all the hosts in your cluster (or just a single computer).
+  - `cp example.config.yml config.yml`: This has some configuration options you may need to override, especially the `ssh_*` and `ram_in_gb` options (depending on your cluster layout)
 
 Each host should be reachable via SSH using the username set in `ansible_user`. Other Ansible options can be set under `[cluster:vars]` to connect in more exotic clustering scenarios (e.g. via bastion/jump-host).
 
-Tweak any settings inside `config.yml` as desired (the most important being `hpl_root`—this is where the compiled MPI, ATLAS, and HPL benchmarking code will live).
+Tweak other settings inside `config.yml` as desired (the most important being `hpl_root`—this is where the compiled MPI, ATLAS, and HPL benchmarking code will live).
 
 Then run the benchmarking playbook inside this directory:
 

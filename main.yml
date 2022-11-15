@@ -31,10 +31,13 @@
       ansible.builtin.file:
         path: "{{ item }}"
         state: directory
+        owner: "{{ ansible_user }}"
+        group: "{{ ansible_user }}"
         mode: 0755
       loop:
         - "{{ hpl_root }}/tmp"
         - "{{ hpl_root }}/tmp/atlas-build"
+      become: true
 
     - name: Download MPI (Message Passing Interface).
       ansible.builtin.unarchive:
@@ -145,11 +148,11 @@
   tasks:
     - name: Generate an OpenSSH keypair.
       community.crypto.openssh_keypair:
-        path: /home/pi/.ssh/id_rsa
+        path: "{{ ssh_user_home }}/.ssh/id_rsa"
         size: 2048
 
     - name: Read out ssh pubkey from each host.
-      ansible.builtin.command: cat /home/pi/.ssh/id_rsa.pub
+      ansible.builtin.command: cat "{{ ssh_user_home }}/.ssh/id_rsa.pub"
       changed_when: false
       register: ssh_pubkey
 
@@ -160,7 +163,7 @@
 
     - name: Write all pubkeys to each host.
       ansible.posix.authorized_key:
-        user: pi
+        user: "{{ ssh_user }}"
         state: present
         key: "{{ item }}"
       loop: "{{ combined_ssh_pubkeys }}"
@@ -172,7 +175,7 @@
 
     - name: Accept hostkeys for each host on each host.
       ansible.builtin.command: >-
-        ssh pi@{{ item }} -o StrictHostKeyChecking=accept-new date
+        ssh {{ ssh_user }}@{{ item }} -o StrictHostKeyChecking=accept-new date
       loop: "{{ host_ips }}"
 
 - name: Run linpack benchmark.
