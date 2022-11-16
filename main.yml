@@ -178,6 +178,15 @@
         ssh {{ ssh_user }}@{{ item }} -o StrictHostKeyChecking=accept-new date
       loop: "{{ host_ips }}"
 
+    - name: Write chunk of hosts information to the hosts file.
+      ansible.builtin.blockinfile:
+        path: /etc/hosts
+        marker: "# {mark} Ansible MPI host {{ item }}"
+        block: |
+          {{ hostvars[item].ansible_default_ipv4.address }} {{ item }} {{ item | replace('.local', '') }}
+      loop: "{{ groups['cluster'] }}"
+      become: true
+
 - name: Run linpack benchmark.
   hosts: cluster
   become: false

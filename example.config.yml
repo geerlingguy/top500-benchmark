@@ -6,11 +6,8 @@ hpl_root: /opt/top500
 ssh_user: pi
 ssh_user_home: /home/pi
 
-# Use this option if running on a single node.
+# Replace ansible_memtotal_mb with cluster memory total if running on cluster.
 ram_in_gb: "{{ ( ansible_memtotal_mb / 1024 * 0.75 ) | int | abs }}"
-
-# Use this option if running on multiple nodes in a cluster; calculate manually.
-# ram_in_gb: "44"
 
 # Count the nodes for accurate HPL.dat calculations.
 nodecount: "{{ ansible_play_hosts | length | int }}"
@@ -21,6 +18,8 @@ nodecount: "{{ ansible_play_hosts | length | int }}"
 hpl_dat_opts:
   # sqrt((Memory in GB * 1024 * 1024 * 1024 * Node count) / 8) * 0.9
   Ns: "{{ (((((ram_in_gb | int) * 1024 * 1024 * 1024 * (nodecount | int)) / 8) | root) * 0.90) | int }}"
-  NBs: 192
-  Ps: 2
-  Qs: 2
+  NBs: 256
+  # (P * Q) should be roughly equivalent to total core count, with Qs higher.
+  # If running on a single system, Ps should be 1 and Qs should be core count.
+  Ps: 1
+  Qs: 4
