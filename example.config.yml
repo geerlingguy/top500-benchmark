@@ -6,7 +6,7 @@ hpl_root: /opt/top500
 ssh_user: pi
 ssh_user_home: /home/pi
 
-# Replace ansible_memtotal_mb with cluster memory total if running on cluster.
+# Specify manually if needed for mixed-RAM-capacity clusters.
 ram_in_gb: "{{ ( ansible_memtotal_mb / 1024 * 0.75 ) | int | abs }}"
 
 # Count the nodes for accurate HPL.dat calculations.

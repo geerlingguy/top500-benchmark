@@ -58,7 +58,9 @@ mpirun -f cluster-hosts ./xhpl
 
 To run locally on a single node, clone or download this repository to the node where you want to run HPL. Make sure the `hosts.ini` is set up with the default options (with just one node, `127.0.0.1`).
 
-Then, run the following command so the cluster networking portion of the playbook is not run:
+All the default configuration from `example.config.yml` should be copied to a `config.yml` file, and all the variables should scale dynamically for your node.
+
+Run the following command so the cluster networking portion of the playbook is not run:
 
 ```
 ansible-playbook main.yml --tags "setup,benchmark"
@@ -95,3 +97,4 @@ Here are a few of the results I've acquired in my testing:
 | DeskPi Super6c (6x CM4 @ 1.5 GHz) | 60.293 Gflops | 40W | 1.50 Gflops/W |
 | DeskPi Super6c (6x CM4 @ 2.0 GHz) | 70.338 Gflops | 51W | 1.38 Gflops/W |
 | M2 MacBook Air (1x M2 @ 3.5 GHz, in Docker) | 104.68 Gflops | TODOW | TODO Gflops/W |
+| M1 Max Mac Studio (1x M1 Max @ 3.2 GHz, in Docker) | TODO Gflops | TODOW | TODO Gflops/W |

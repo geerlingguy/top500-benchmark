@@ -31,8 +31,8 @@
       ansible.builtin.file:
         path: "{{ item }}"
         state: directory
-        owner: "{{ ansible_user }}"
-        group: "{{ ansible_user }}"
+        owner: "{{ ansible_user | default(ansible_env.USER, true) | default(ansible_user_id, true) }}"
+        group: "{{ ansible_user | default(ansible_env.USER, true) | default(ansible_user_id, true) }}"
         mode: 0755
       loop:
         - "{{ hpl_root }}/tmp"
