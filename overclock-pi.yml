@@ -1,0 +1,33 @@
+- name: Set up overclock on Raspberry Pis.
+  hosts: cluster
+  become: true
+
+  vars_files: ['config.yml']
+  vars:
+    pi_over_voltage: '6'
+    pi_arm_freq: '2000'
+
+  handlers:
+    - name: reboot pi
+      ansible.builtin.reboot:
+
+  tasks:
+    - name: Configure options in /boot/config.txt.
+      community.general.ini_file:
+        path: /boot/config.txt
+        section: '{{ item.section }}'
+        option: "{{ item.option }}"
+        value: "{{ item.value }}"
+        no_extra_spaces: true
+        state: present
+      with_items:
+        - section: all
+          option: gpu_mem
+          value: '16'
+        - section: ''
+          option: over_voltage
+          value: "{{ pi_over_voltage }}"
+        - section: ''
+          option: arm_freq
+          value: "{{ pi_arm_freq }}"
+      notify: reboot pi

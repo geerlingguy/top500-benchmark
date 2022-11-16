@@ -72,6 +72,18 @@ ansible-playbook main.yml --tags "setup,benchmark"
 >
 > Then go into the code directory (`cd /code`) and run the playbook using the command above.
 
+### Overclocking
+
+Since I originally built this project for a Raspberry Pi cluster, I include a playbook to set an overclock for all the Raspberry Pis in a given cluster.
+
+You can set a clock speed by changing the `pi_arm_freq` in the `overclock-pi.yml` playbook, then run it with:
+
+```
+ansible-playbook overclock-pi.yml
+```
+
+Higher clock speeds require more power and thus more cooling, so if you are running a Pi cluster with just heatsinks, you may also require a fan blowing over them if running overclocked.
+
 ## Results
 
 Here are a few of the results I've acquired in my testing:
@@ -80,5 +92,6 @@ Here are a few of the results I've acquired in my testing:
 |--- |--- |--- |--- |
 | Turing Pi 2 (4x CM4 @ 1.5 GHz) | 44.942 Gflops | 24.5W | 1.83 Gflops/W |
 | Turing Pi 2 (4x CM4 @ 2.0 GHz) | 51.327 Gflops | 33W | 1.54 Gflops/W |
-| DeskPi Super6c (6x CM4 @ 1.5 GHz) | 57.634 Gflops | 40W | 1.44 Gflops/W |
+| DeskPi Super6c (6x CM4 @ 1.5 GHz) | 60.293 Gflops | 40W | 1.50 Gflops/W |
+| DeskPi Super6c (6x CM4 @ 2.0 GHz) | 70.338 Gflops | 51W | 1.38 Gflops/W |
 | M2 MacBook Air (1x M2 @ 3.5 GHz, in Docker) | 104.68 Gflops | TODOW | TODO Gflops/W |
