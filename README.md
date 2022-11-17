@@ -69,10 +69,16 @@ ansible-playbook main.yml --tags "setup,benchmark"
 > For testing, you can start an Ubuntu docker container:
 > 
 > ```
-> docker run -it --rm -v $PWD:/code geerlingguy/docker-ubuntu2204-ansible:latest bash
+> docker run --name top500 -it -v $PWD:/code geerlingguy/docker-ubuntu2204-ansible:latest bash
 > ```
 >
 > Then go into the code directory (`cd /code`) and run the playbook using the command above.
+
+#### Setting `performance` CPU frequency
+
+If you get an error like `CPU Throttling apparently enabled!`, you may need to set the CPU frequency to `performance` (and disable any throttling or performance scaling).
+
+For different OSes and different CPU types, the way you do this could be different. So far the automated `performance` setting in the `main.yml` playbook has only been tested on Raspberry Pi OS. You may need to look up how to disable throttling on your own system. Do that, then run the `main.yml` playbook again.
 
 ### Overclocking
 
@@ -98,3 +104,4 @@ Here are a few of the results I've acquired in my testing:
 | DeskPi Super6c (6x CM4 @ 2.0 GHz) | 70.338 Gflops | 51W | 1.38 Gflops/W |
 | M2 MacBook Air (1x M2 @ 3.5 GHz, in Docker) | 104.68 Gflops | TODOW | TODO Gflops/W |
 | M1 Max Mac Studio (1x M1 Max @ 3.2 GHz, in Docker) | TODO Gflops | TODOW | TODO Gflops/W |
+| AMD Ryzen 5 5600x @ 3.7 GHz | 229 Gflops | 196W | 1.16 Gflops/W |

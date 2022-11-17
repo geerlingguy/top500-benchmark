@@ -22,6 +22,7 @@
     - name: Install dependencies.
       ansible.builtin.package:
         name:
+          - build-essential
           - gfortran
           - automake
         state: present
