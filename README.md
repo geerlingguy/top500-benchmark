@@ -102,6 +102,6 @@ Here are a few of the results I've acquired in my testing:
 | Turing Pi 2 (4x CM4 @ 2.0 GHz) | 51.327 Gflops | 33W | 1.54 Gflops/W |
 | DeskPi Super6c (6x CM4 @ 1.5 GHz) | 60.293 Gflops | 40W | 1.50 Gflops/W |
 | DeskPi Super6c (6x CM4 @ 2.0 GHz) | 70.338 Gflops | 51W | 1.38 Gflops/W |
-| M2 MacBook Air (1x M2 @ 3.5 GHz, in Docker) | 104.68 Gflops | TODOW | TODO Gflops/W |
-| M1 Max Mac Studio (1x M1 Max @ 3.2 GHz, in Docker) | TODO Gflops | TODOW | TODO Gflops/W |
+| M2 MacBook Air (1x M2 @ 3.5 GHz, in Docker) | 104.68 Gflops | N/A | N/A |
+| M1 Max Mac Studio (1x M1 Max @ 3.2 GHz, in Docker) | 264.32 Gflops | 66W | 4.00 Gflops/W |
 | AMD Ryzen 5 5600x @ 3.7 GHz | 229 Gflops | 196W | 1.16 Gflops/W |
