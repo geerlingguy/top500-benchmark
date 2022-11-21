@@ -54,7 +54,7 @@
         creates: "{{ hpl_root }}/tmp/COMPILE_MPI_COMPLETE"
       loop:
         - ./configure --with-device=ch3:sock FFLAGS=-fallow-argument-mismatch
-        - make -j4
+        - "make -j{{ ansible_processor_nproc }}"
 
     - name: Install MPI.
       ansible.builtin.command: make install
