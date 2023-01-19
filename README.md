@@ -103,6 +103,7 @@ Here are a few of the results I've acquired in my testing:
 | DeskPi Super6c (6x CM4 @ 1.5 GHz) | 60.293 Gflops | 40W | 1.50 Gflops/W |
 | DeskPi Super6c (6x CM4 @ 2.0 GHz) | 70.338 Gflops | 51W | 1.38 Gflops/W |
 | Radxa ROCK 5B (1x RK3588 8-core) | 46.669 Gflops | 15W | 3.11 Gflops/W |
+| Lenovo M710q Tiny (1x i5-7400T @ 2.4 GHz) | 72.472 Gflops | 41W | 1.76 Gflops/W |
 | M2 MacBook Air (1x M2 @ 3.5 GHz, in Docker) | 104.68 Gflops | N/A | N/A |
 | M1 Max Mac Studio (1x M1 Max @ 3.2 GHz, in Docker) | 264.32 Gflops | 66W | 4.00 Gflops/W |
 | AMD Ryzen 5 5600x @ 3.7 GHz | 229 Gflops | 196W | 1.16 Gflops/W |
