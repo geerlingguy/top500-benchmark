@@ -1,0 +1,12 @@
+- name: Update pacman cache.
+  community.general.pacman:
+    update_cache: true
+  become: true
+
+- name: Install dependencies.
+  ansible.builtin.package:
+    name:
+      - base-devel
+      - gcc-fortran
+    state: present
+  become: true
