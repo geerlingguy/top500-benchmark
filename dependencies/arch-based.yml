@@ -1,3 +1,4 @@
+---
 - name: Update pacman cache.
   community.general.pacman:
     update_cache: true

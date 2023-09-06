@@ -1,3 +1,4 @@
+---
 # Remove our custom firewall zone since we don't need it anymore
 - name: Reverting firewall back to its original state.
   ansible.posix.firewalld:

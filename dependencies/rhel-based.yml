@@ -1,3 +1,4 @@
+---
 - name: Update dnf cache.
   ansible.builtin.dnf:
     update_cache: true
@@ -8,8 +9,7 @@
     name:
       - '@Development Tools'
       - gcc-gfortran
-      # Fedora, at least Fedora Server, doesn't install this 
-      # with the Development Tools group for some reason
+      # Fedora doesn't install this with the Development Tools group.
       - gcc-g++
     state: present
   become: true

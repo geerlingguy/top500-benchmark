@@ -1,3 +1,4 @@
+---
 - name: Creating new custom firewall zone.
   ansible.posix.firewalld:
     zone: top500
