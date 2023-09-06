@@ -1,0 +1,14 @@
+- name: Update apt cache.
+  ansible.builtin.apt:
+    update_cache: true
+    cache_valid_time: 600
+  become: true
+
+- name: Install dependencies.
+  ansible.builtin.package:
+    name:
+      - build-essential
+      - gfortran
+      - automake
+    state: present
+  become: true

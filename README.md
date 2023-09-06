@@ -19,6 +19,13 @@ Currently supported OSes:
   - Ubuntu (20.04+)
   - Raspberry Pi OS (11+)
   - Debian (11+)
+  - Rocky Linux (9+)
+  - AlmaLinux (9+)
+  - CentOS Stream(9+)
+  - RHEL (9+)
+  - Fedora (38+)
+  - Arch Linux
+  - Manjaro
 
 Other OSes may need a few tweaks to work correctly. You can also run the playbook inside Docker (see the note under 'Benchmarking - Single Node'), but performance will be artificially limited.
 
@@ -32,6 +39,10 @@ Make sure you have Ansible installed (`pip3 install ansible`), then copy the fol
 Each host should be reachable via SSH using the username set in `ansible_user`. Other Ansible options can be set under `[cluster:vars]` to connect in more exotic clustering scenarios (e.g. via bastion/jump-host).
 
 Tweak other settings inside `config.yml` as desired (the most important being `hpl_root`—this is where the compiled MPI, ATLAS, and HPL benchmarking code will live).
+
+> **Note**:
+> The names of the nodes inside `hosts.ini` must match the hostname of their corresponding node; otherwise, the benchmark will hang when you try to run it in a cluster. 
+> For example, if you have `node-01.local` in your `hosts.ini` your host's hostname should be `node-01` and not something else like `raspberry-pi`.
 
 Then run the benchmarking playbook inside this directory:
 

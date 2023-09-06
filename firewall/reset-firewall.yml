@@ -1,0 +1,20 @@
+# Remove our custom firewall zone since we don't need it anymore
+- name: Reverting firewall back to its original state.
+  ansible.posix.firewalld:
+    zone: top500
+    state: absent
+    permanent: true
+  become: true
+
+- name: Restarting firewall for changes to take effect.
+  ansible.builtin.service:
+    name: firewalld
+    state: restarted
+  become: true
+
+# When removing a custom firewall zone, a .xml.old file will sometimes remain
+- name: Cleaning up firewall rules.
+  ansible.builtin.file:
+    path: /etc/firewalld/zones/top500.xml.old
+    state: absent
+  become: true

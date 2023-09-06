@@ -12,21 +12,14 @@
   vars_files: ['config.yml']
 
   tasks:
-    - name: Update apt cache.
-      ansible.builtin.apt:
-        update_cache: true
-        cache_valid_time: 600
-      when: ansible_os_family == 'Debian'
-      become: true
+    - include_tasks: dependencies/rhel-based.yml
+      when: ansible_os_family == 'RedHat'
 
-    - name: Install dependencies.
-      ansible.builtin.package:
-        name:
-          - build-essential
-          - gfortran
-          - automake
-        state: present
-      become: true
+    - include_tasks: dependencies/debian-based.yml
+      when: ansible_os_family == 'Debian'
+
+    - include_tasks: dependencies/arch-based.yml
+      when: ansible_os_family == 'Archlinux'
 
     - name: Create required temporary directories.
       ansible.builtin.file:
@@ -210,12 +203,20 @@
         dest: "{{ hpl_root }}/tmp/hpl-2.3/bin/rpi/HPL.dat"
         mode: 0644
 
+    # If this is not done, the nodes will fail to connect to each other
+    # causing the playbook to hang at 'Run the benchmark.'
+    - include_tasks: firewall/configure-firewall.yml
+      when: ansible_os_family == "RedHat"
+
     - name: Run the benchmark.
       ansible.builtin.command: mpirun -f cluster-hosts ./xhpl
       args:
         chdir: "{{ hpl_root }}/tmp/hpl-2.3/bin/rpi"
       register: mpirun_output
       run_once: true
+
+    - include_tasks: firewall/reset-firewall.yml
+      when: ansible_os_family == "RedHat"
 
     - name: Output the results.
       debug: var=mpirun_output.stdout
