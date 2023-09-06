@@ -82,24 +82,6 @@
         remote_src: true
         creates: "{{ hpl_root }}/tmp/ATLAS/README"
 
-    # The source code for the configure script that ATLAS uses makes calls
-    # with fgrep to find information about the system from its various 
-    # outputs to set the configuration accordingly. However, 
-    # grep versions 3.8+ throw the following warning when calling fgrep:
-    # 'fgrep: warning: fgrep is obsolescent; using grep -F'
-    # This occurs as output from fgrep which causes the ATLAS configuration 
-    # to get invalid return values, causing the configuration to fail 
-    # due to it assuming the first value is the number it's looking for.
-    #
-    # If the version of grep is 3.8 or newer, we have to patch the ATLAS 
-    # source code to get rid of the warning produced by fgrep.
-    - name: Checking installed software.
-      package_facts:
-        manager: auto
-
-    - include_tasks: patch-atlas-src.yml
-      when: ansible_facts.packages['grep'][0].version is version("3.8", ">=")
-
     - name: Install ATLAS (takes a LONG time).
       ansible.builtin.command: "{{ item }}"
       args:
