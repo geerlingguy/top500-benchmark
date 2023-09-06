@@ -109,6 +109,7 @@ Here are a few of the results I've acquired in my testing:
 
 | Configuration | Result | Wattage | Gflops/W |
 |--- |--- |--- |--- |
+| Raspberry Pi 4 (1x BCM2711 @ 1.8 GHz) | 11.774 Gflops | 7.2W | 1.64 Gflops/W |
 | Turing Pi 2 (4x CM4 @ 1.5 GHz) | 44.942 Gflops | 24.5W | 1.83 Gflops/W |
 | Turing Pi 2 (4x CM4 @ 2.0 GHz) | 51.327 Gflops | 33W | 1.54 Gflops/W |
 | DeskPi Super6c (6x CM4 @ 1.5 GHz) | 60.293 Gflops | 40W | 1.50 Gflops/W |
