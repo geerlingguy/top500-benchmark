@@ -3,7 +3,7 @@
 hpl_root: /opt/top500
 
 # Linear algebra library options.
-linear_algebra_library: atlas  # 'atlas', 'openblas', or 'blis'
+linear_algebra_library: blis  # 'atlas', 'openblas', or 'blis'
 linear_algebra_blis_version: master  # only used for blis
 linear_algebra_openblas_version: develop  # only used for openblas
 
