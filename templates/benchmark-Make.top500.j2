@@ -61,7 +61,7 @@ TOUCH        = touch
 # - Platform identifier ------------------------------------------------
 # ----------------------------------------------------------------------
 #
-ARCH         = rpi
+ARCH         = top500
 #
 # ----------------------------------------------------------------------
 # - HPL Directory Structure / HPL library ------------------------------
@@ -92,9 +92,19 @@ MPlib        = /usr/local/lib/libmpich.so
 # header files,  LAlib  is defined  to be the name of  the library to be 
 # used. The variable LAdir is only used for defining LAinc and LAlib.
 #
+{% if linear_algebra_library == 'atlas' %}
 LAdir        = {{ hpl_root }}/tmp/atlas-build
 LAinc        =
 LAlib        = $(LAdir)/lib/libf77blas.a $(LAdir)/lib/libatlas.a
+{% elif linear_algebra_library == 'blis' %}
+LAdir        = /opt/blis
+LAinc        =
+LAlib        = $(LAdir)/lib/libblis.a -lpthread
+{% elif linear_algebra_library == 'openblas' %}
+LAdir        = /opt/openblas
+LAinc        =
+LAlib        = $(LAdir)/lib/libopenblas.a -lpthread
+{% endif %}
 #
 # ----------------------------------------------------------------------
 # - F77 / C interface --------------------------------------------------

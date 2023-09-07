@@ -1,0 +1,22 @@
+---
+- name: Download ATLAS linear algebra library.
+  ansible.builtin.unarchive:
+    src: https://sourceforge.net/projects/math-atlas/files/Stable/3.10.3/atlas3.10.3.tar.bz2
+    dest: "{{ hpl_root }}/tmp"
+    remote_src: true
+    creates: "{{ hpl_root }}/tmp/ATLAS/README"
+
+- name: Install ATLAS (takes a LONG time).
+  ansible.builtin.command: "{{ item }}"
+  args:
+    chdir: "{{ hpl_root }}/tmp/atlas-build"
+    creates: "{{ hpl_root }}/tmp/COMPILE_ATLAS_COMPLETE"
+  loop:
+    - ../ATLAS/configure
+    - make
+
+- name: Create 'COMPILE_ATLAS_COMPLETE' file.
+  ansible.builtin.file:
+    path: "{{ hpl_root }}/tmp/COMPILE_ATLAS_COMPLETE"
+    state: touch
+    mode: 0644

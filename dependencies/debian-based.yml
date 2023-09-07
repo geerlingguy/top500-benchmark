@@ -8,6 +8,7 @@
 - name: Install dependencies.
   ansible.builtin.package:
     name:
+      - git
       - build-essential
       - gfortran
       - automake

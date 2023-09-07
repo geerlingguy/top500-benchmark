@@ -38,11 +38,11 @@ Make sure you have Ansible installed (`pip3 install ansible`), then copy the fol
 
 Each host should be reachable via SSH using the username set in `ansible_user`. Other Ansible options can be set under `[cluster:vars]` to connect in more exotic clustering scenarios (e.g. via bastion/jump-host).
 
-Tweak other settings inside `config.yml` as desired (the most important being `hpl_root`—this is where the compiled MPI, ATLAS, and HPL benchmarking code will live).
+Tweak other settings inside `config.yml` as desired (the most important being `hpl_root`—this is where the compiled MPI, ATLAS/OpenBLAS/Blis, and HPL benchmarking code will live).
 
-> **Note**:
-> The names of the nodes inside `hosts.ini` must match the hostname of their corresponding node; otherwise, the benchmark will hang when you try to run it in a cluster. 
-> For example, if you have `node-01.local` in your `hosts.ini` your host's hostname should be `node-01` and not something else like `raspberry-pi`.
+> **Note**: The names of the nodes inside `hosts.ini` must match the hostname of their corresponding node; otherwise, the benchmark will hang when you try to run it in a cluster. 
+> 
+> For example, if you have `node-01.local` in your `hosts.ini` your host's hostname should be `node-01` and not something else like `raspberry-pi`.
 
 Then run the benchmarking playbook inside this directory:
 
@@ -59,7 +59,7 @@ This will run three separate plays:
 After the entire playbook is complete, you can also log directly into any of the nodes (though I generally do things on node 1), and run the following commands to kick off a benchmarking run:
 
 ```
-cd ~/tmp/hpl-2.3/bin/rpi
+cd ~/tmp/hpl-2.3/bin/top500
 mpirun -f cluster-hosts ./xhpl
 ```
 
@@ -115,6 +115,7 @@ Here are a few of the results I've acquired in my testing:
 | DeskPi Super6c (6x CM4 @ 1.5 GHz) | 60.293 Gflops | 40W | 1.50 Gflops/W |
 | DeskPi Super6c (6x CM4 @ 2.0 GHz) | 70.338 Gflops | 51W | 1.38 Gflops/W |
 | Radxa ROCK 5B (1x RK3588 8-core) | 46.669 Gflops | 15W | 3.11 Gflops/W |
+| Orange Pi 5 (1x RK3588S 8-core) | 53.333 Gflops | 11.7W | 4.56 Gflops/W |
 | Lenovo M710q Tiny (1x i5-7400T @ 2.4 GHz) | 72.472 Gflops | 41W | 1.76 Gflops/W |
 | M2 MacBook Air (1x M2 @ 3.5 GHz, in Docker) | 104.68 Gflops | N/A | N/A |
 | M1 Max Mac Studio (1x M1 Max @ 3.2 GHz, in Docker) | 264.32 Gflops | 66W | 4.00 Gflops/W |
@@ -123,3 +124,9 @@ Here are a few of the results I've acquired in my testing:
 | Ampere Altra Max M128-30 @ 3.0 GHz | 953.47 Gflops | 500W | 1.91 Gflops/W |
 
 You can [enter the Gflops in this tool](https://hpl-calculator.sourceforge.net/hpl-calculations.php) to see how it compares to historical top500 lists.
+
+### Other Listings
+
+Over the years, as I find other people's listings of HPL results—especially those with power usage ratings—I will add them here:
+
+  - [VMW Research Group GFLOPS/W listing](https://web.eece.maine.edu/~vweaver/group/green_machines.html)

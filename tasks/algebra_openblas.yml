@@ -1,0 +1,22 @@
+---
+- name: Download OpenBLAS linear algebra library.
+  ansible.builtin.git:
+    repo: 'https://github.com/xianyi/OpenBLAS'
+    version: "{{ linear_algebra_openblas_version }}"
+    dest: "{{ hpl_root }}/tmp/openblas-build"
+
+- name: Install OpenBLAS.
+  ansible.builtin.command: "{{ item }}"
+  args:
+    chdir: "{{ hpl_root }}/tmp/openblas-build"
+    creates: "{{ hpl_root }}/tmp/COMPILE_OPENBLAS_COMPLETE"
+  loop:
+    - make -j{{ ansible_processor_vcpus }}
+    - make PREFIX=/opt/openblas install
+  become: true
+
+- name: Create 'COMPILE_OPENBLAS_COMPLETE' file.
+  ansible.builtin.file:
+    path: "{{ hpl_root }}/tmp/COMPILE_OPENBLAS_COMPLETE"
+    state: touch
+    mode: 0644

@@ -1,0 +1,23 @@
+---
+- name: Download Blis linear algebra library.
+  ansible.builtin.git:
+    repo: 'https://github.com/flame/blis.git'
+    version: "{{ linear_algebra_blis_version }}"
+    dest: "{{ hpl_root }}/tmp/blis-build"
+
+- name: Install Blis.
+  ansible.builtin.command: "{{ item }}"
+  args:
+    chdir: "{{ hpl_root }}/tmp/blis-build"
+    creates: "{{ hpl_root }}/tmp/COMPILE_BLIS_COMPLETE"
+  loop:
+    - ./configure --prefix=/opt/blis auto
+    - make -j{{ ansible_processor_vcpus }}
+    - make install
+  become: true
+
+- name: Create 'COMPILE_BLIS_COMPLETE' file.
+  ansible.builtin.file:
+    path: "{{ hpl_root }}/tmp/COMPILE_BLIS_COMPLETE"
+    state: touch
+    mode: 0644

@@ -12,13 +12,13 @@
   vars_files: ['config.yml']
 
   tasks:
-    - include_tasks: dependencies/rhel-based.yml
+    - ansible.builtin.include_tasks: dependencies/rhel-based.yml
       when: ansible_os_family == 'RedHat'
 
-    - include_tasks: dependencies/debian-based.yml
+    - ansible.builtin.include_tasks: dependencies/debian-based.yml
       when: ansible_os_family == 'Debian'
 
-    - include_tasks: dependencies/arch-based.yml
+    - ansible.builtin.include_tasks: dependencies/arch-based.yml
       when: ansible_os_family == 'Archlinux'
 
     - name: Create required temporary directories.
@@ -30,7 +30,7 @@
         mode: 0755
       loop:
         - "{{ hpl_root }}/tmp"
-        - "{{ hpl_root }}/tmp/atlas-build"
+        - "{{ hpl_root }}/tmp/{{ linear_algebra_library }}-build"
       become: true
 
     - name: Download MPI (Message Passing Interface).
@@ -72,30 +72,18 @@
     # Note: There was no simpler way to do this besides `shell`.
     - name: Ensure CPU scaling is set to 'performance'.
       ansible.builtin.shell: >-
-        echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+        echo performance | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
       when: cpufreq_exists.rc == 0
+      become: true
 
-    - name: Download ATLAS linear algebra library.
-      ansible.builtin.unarchive:
-        src: https://sourceforge.net/projects/math-atlas/files/Stable/3.10.3/atlas3.10.3.tar.bz2
-        dest: "{{ hpl_root }}/tmp"
-        remote_src: true
-        creates: "{{ hpl_root }}/tmp/ATLAS/README"
+    - ansible.builtin.include_tasks: tasks/algebra_atlas.yml
+      when: linear_algebra_library == 'atlas'
 
-    - name: Install ATLAS (takes a LONG time).
-      ansible.builtin.command: "{{ item }}"
-      args:
-        chdir: "{{ hpl_root }}/tmp/atlas-build"
-        creates: "{{ hpl_root }}/tmp/COMPILE_ATLAS_COMPLETE"
-      loop:
-        - ../ATLAS/configure
-        - make
+    - ansible.builtin.include_tasks: tasks/algebra_blis.yml
+      when: linear_algebra_library == 'blis'
 
-    - name: Create 'COMPILE_ATLAS_COMPLETE' file.
-      file:
-        path: "{{ hpl_root }}/tmp/COMPILE_ATLAS_COMPLETE"
-        state: touch
-        mode: 0644
+    - ansible.builtin.include_tasks: tasks/algebra_openblas.yml
+      when: linear_algebra_library == 'openblas'
 
     - name: Download HPL (High Performance Linpack).
       ansible.builtin.unarchive:
@@ -110,15 +98,15 @@
         chdir: "{{ hpl_root }}/tmp/hpl-2.3/setup"
         creates: "{{ hpl_root }}/tmp/COMPILE_HPL_COMPLETE"
 
-    - name: Copy rpi makefile into place.
+    - name: Copy HPL makefile into place.
       ansible.builtin.template:
-        src: templates/benchmark-Make.rpi.j2
-        dest: "{{ hpl_root }}/tmp/hpl-2.3/Make.rpi"
+        src: templates/benchmark-Make.top500.j2
+        dest: "{{ hpl_root }}/tmp/hpl-2.3/Make.top500"
         mode: 0644
 
     - name: Install HPL.
       ansible.builtin.command: >-
-        make arch=rpi
+        make arch=top500
       args:
         chdir: "{{ hpl_root }}/tmp/hpl-2.3"
         creates: "{{ hpl_root }}/tmp/COMPILE_HPL_COMPLETE"
@@ -192,7 +180,7 @@
     - name: Create a file describing nodes for MPI execution.
       ansible.builtin.template:
         src: templates/mpi-node-config.j2
-        dest: "{{ hpl_root }}/tmp/hpl-2.3/bin/rpi/cluster-hosts"
+        dest: "{{ hpl_root }}/tmp/hpl-2.3/bin/top500/cluster-hosts"
         mode: 0644
 
     # Template originally generated using this website:
@@ -200,7 +188,7 @@
     - name: Create HPL.dat file.
       ansible.builtin.template:
         src: templates/HPL.dat.j2
-        dest: "{{ hpl_root }}/tmp/hpl-2.3/bin/rpi/HPL.dat"
+        dest: "{{ hpl_root }}/tmp/hpl-2.3/bin/top500/HPL.dat"
         mode: 0644
 
     # If this is not done, the nodes will fail to connect to each other
@@ -211,7 +199,7 @@
     - name: Run the benchmark.
       ansible.builtin.command: mpirun -f cluster-hosts ./xhpl
       args:
-        chdir: "{{ hpl_root }}/tmp/hpl-2.3/bin/rpi"
+        chdir: "{{ hpl_root }}/tmp/hpl-2.3/bin/top500"
       register: mpirun_output
       run_once: true
 
