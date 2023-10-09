@@ -121,6 +121,7 @@ Here are a few of the results I've acquired in my testing:
 | M2 MacBook Air (1x M2 @ 3.5 GHz, in Docker) | 104.68 Gflops | N/A | N/A |
 | [M1 Max Mac Studio (1x M1 Max @ 3.2 GHz, in Docker)](https://github.com/geerlingguy/top500-benchmark/issues/4) | 264.32 Gflops | 66W | 4.00 Gflops/W |
 | AMD Ryzen 5 5600x @ 3.7 GHz | 229 Gflops | 196W | 1.16 Gflops/W |
+| [Ampere Altra Max Q64-22 @ 2.2 GHz](https://github.com/geerlingguy/top500-benchmark/issues/19) | 602.25 Gflops | 140W | 4.30 Gflops/W |
 | [Ampere Altra Max M96-28 @ 2.8 GHz](https://github.com/geerlingguy/top500-benchmark/issues/10) | 1,188.3 Gflops | 295W | 4.01 Gflops/W |
 | [Ampere Altra Max M128-28 @ 2.8 GHz](https://github.com/geerlingguy/top500-benchmark/issues/17) | 1,265.5 Gflops | 296W | 4.27 Gflops/W |
 | [Ampere Altra Max M128-30 @ 3.0 GHz](https://github.com/geerlingguy/top500-benchmark/issues/3) | 953.47 Gflops | 500W | 1.91 Gflops/W |
