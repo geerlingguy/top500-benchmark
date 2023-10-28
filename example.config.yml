@@ -2,6 +2,8 @@
 # Working directory where HPL and associated applications will be compiled.
 hpl_root: /opt/top500
 
+mpich_version: "4.1.2"
+
 # Linear algebra library options.
 linear_algebra_library: blis  # 'atlas', 'openblas', or 'blis'
 linear_algebra_blis_version: master  # only used for blis

@@ -35,15 +35,15 @@
 
     - name: Download MPI (Message Passing Interface).
       ansible.builtin.unarchive:
-        src: https://www.mpich.org/static/downloads/3.4.2/mpich-3.4.2.tar.gz
+        src: https://www.mpich.org/static/downloads/{{ mpich_version }}/mpich-{{ mpich_version }}.tar.gz
         dest: "{{ hpl_root }}/tmp"
         remote_src: true
-        creates: "{{ hpl_root }}/tmp/mpich-3.4.2/README"
+        creates: "{{ hpl_root }}/tmp/mpich-{{ mpich_version }}/README"
 
     - name: Build MPI (takes a while).
       ansible.builtin.command: "{{ item }}"
       args:
-        chdir: "{{ hpl_root }}/tmp/mpich-3.4.2"
+        chdir: "{{ hpl_root }}/tmp/mpich-{{ mpich_version }}"
         creates: "{{ hpl_root }}/tmp/COMPILE_MPI_COMPLETE"
       loop:
         - ./configure --with-device=ch3:sock FFLAGS=-fallow-argument-mismatch
@@ -52,7 +52,7 @@
     - name: Install MPI.
       ansible.builtin.command: make install
       args:
-        chdir: "{{ hpl_root }}/tmp/mpich-3.4.2"
+        chdir: "{{ hpl_root }}/tmp/mpich-{{ mpich_version }}"
         creates: "{{ hpl_root }}/tmp/COMPILE_MPI_COMPLETE"
       become: true
 
