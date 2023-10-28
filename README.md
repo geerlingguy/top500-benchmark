@@ -125,8 +125,11 @@ Here are a few of the results I've acquired in my testing:
 | [Ampere Altra Max M96-28 @ 2.8 GHz](https://github.com/geerlingguy/top500-benchmark/issues/10) | 1,188.3 Gflops | 295W | 4.01 Gflops/W |
 | [Ampere Altra Max M128-28 @ 2.8 GHz](https://github.com/geerlingguy/top500-benchmark/issues/17) | 1,265.5 Gflops | 296W | 4.27 Gflops/W |
 | [Ampere Altra Max M128-30 @ 3.0 GHz](https://github.com/geerlingguy/top500-benchmark/issues/3) | 953.47 Gflops | 500W | 1.91 Gflops/W |
+| [Milk-V Mars CM JH7110 4-core](https://github.com/geerlingguy/top500-benchmark/issues/20) | 1.99 Gflops | 3.6W | 0.55 Gflops/W |
 
 You can [enter the Gflops in this tool](https://hpl-calculator.sourceforge.net/hpl-calculations.php) to see how it compares to historical top500 lists.
+
+> **Note**: My current calculation for efficiency is based on three average measurements of power draw during the test—once at the beginning (first 10 seconds), once in the middle, and once at the end. At some point I hope to increase the accuracy of my power draw measurement over the full course of the benchmark. But for now, take my _efficiency_ ratings with a grain of salt. They aren't _wrong_, but they aren't 100% perfect either.
 
 ### Other Listings
 
