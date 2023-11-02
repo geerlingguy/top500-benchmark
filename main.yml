@@ -191,9 +191,14 @@
         dest: "{{ hpl_root }}/tmp/hpl-2.3/bin/top500/HPL.dat"
         mode: 0644
 
+    - name: Generate list of host IP addresses.
+      ansible.builtin.set_fact:
+        host_ips: "{{ host_ips + [ hostvars[item].ansible_default_ipv4.address ] }}"
+      loop: "{{ groups['cluster'] }}"
+
     # If this is not done, the nodes will fail to connect to each other
     # causing the playbook to hang at 'Run the benchmark.'
-    - include_tasks: firewall/configure-firewall.yml
+    - include_tasks: tasks/firewall-configure.yml
       when: ansible_os_family == "RedHat"
 
     - name: Run the benchmark.
@@ -203,7 +208,7 @@
       register: mpirun_output
       run_once: true
 
-    - include_tasks: firewall/reset-firewall.yml
+    - include_tasks: tasks/firewall-reset.yml
       when: ansible_os_family == "RedHat"
 
     - name: Output the results.
