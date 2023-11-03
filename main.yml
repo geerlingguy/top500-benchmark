@@ -175,6 +175,8 @@
   tags: ['benchmark']
 
   vars_files: ['config.yml']
+  vars:
+    host_ips: []
 
   tasks:
     - name: Create a file describing nodes for MPI execution.
