@@ -118,7 +118,7 @@ Here are a few of the results I've acquired in my testing:
 | [DeskPi Super6c (6x CM4 @ 2.0 GHz)](https://www.jeffgeerling.com/blog/2022/pi-cluster-vs-ampere-altra-max-128-core-arm-cpu) | 70.338 Gflops | 51W | 1.38 Gflops/W |
 | [Radxa ROCK 5B (RK3588 8-core)](https://github.com/geerlingguy/top500-benchmark/issues/8) | 51.382 Gflops | 12W | 4.32 Gflops/W |
 | [Orange Pi 5 (RK3588S 8-core)](https://github.com/geerlingguy/top500-benchmark/issues/14) | 53.333 Gflops | 11.5W | 4.64 Gflops/W |
-| [Orange Pi CM4 (RK3566 4-core)](https://github.com/geerlingguy/top500-benchmark/issues/23) | 5.604 Gflops | N/A | N/A |
+| [Orange Pi CM4 (RK3566 4-core)](https://github.com/geerlingguy/top500-benchmark/issues/23) | 5.604 Gflops | 4.0W | 1.40 Gflop/W |
 | [Lenovo M710q Tiny (1x i5-7400T @ 2.4 GHz)](https://www.jeffgeerling.com/blog/2023/rock-5-b-not-raspberry-pi-killer-yet) | 72.472 Gflops | 41W | 1.76 Gflops/W |
 | M2 MacBook Air (1x M2 @ 3.5 GHz, in Docker) | 104.68 Gflops | N/A | N/A |
 | [M2 Pro MacBook Pro (1x M2 Pro, in Asahi Linux)](https://github.com/geerlingguy/top500-benchmark/issues/21#issuecomment-1792425949) | 296.93 Gflops | N/A | N/A |
