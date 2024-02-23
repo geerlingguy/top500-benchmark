@@ -43,6 +43,10 @@ Tweak other settings inside `config.yml` as desired (the most important being `h
 > **Note**: The names of the nodes inside `hosts.ini` must match the hostname of their corresponding node; otherwise, the benchmark will hang when you try to run it in a cluster. 
 > 
 > For example, if you have `node-01.local` in your `hosts.ini` your host's hostname should be `node-01` and not something else like `raspberry-pi`.
+>
+> If you're testing with `.local` domains on Ubuntu, and local mDNS resolution isn't working, consider installing the `avahi-daemon` package:
+>
+> `sudo apt-get install avahi-daemon`
 
 Then run the benchmarking playbook inside this directory:
 
@@ -111,7 +115,8 @@ Here are a few of the results I've acquired in my testing:
 |--- |--- |--- |--- |
 | [Raspberry Pi 5 (BCM2712 @ 2.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/18) | 30.249 Gflops | 11W | 2.75 Gflops/W |
 | [Raspberry Pi 4 (BCM2711 @ 1.8 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/13) | 11.889 Gflops | 7.2W | 1.65 Gflops/W |
-| [Turing Machines RK1 (RK3588 8-core)](https://github.com/geerlingguy/top500-benchmark/issues/22) | 59.581 Gflops | N/A | N/A |
+| [Turing Machines RK1 (RK3588 8-core)](https://github.com/geerlingguy/top500-benchmark/issues/22) | 59.810 Gflops | 18.1 | 3.30 Gflops/W |
+| [Turing Pi 2 (4x RK1 @ 2.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/27) | 224.60 Gflops | 73W | 3.08 Gflops/W |
 | [Turing Pi 2 (4x CM4 @ 1.5 GHz)](https://www.jeffgeerling.com/blog/2021/turing-pi-2-4-raspberry-pi-nodes-on-mini-itx-board) | 44.942 Gflops | 24.5W | 1.83 Gflops/W |
 | [Turing Pi 2 (4x CM4 @ 2.0 GHz)](https://www.jeffgeerling.com/blog/2021/turing-pi-2-4-raspberry-pi-nodes-on-mini-itx-board) | 51.327 Gflops | 33W | 1.54 Gflops/W |
 | [DeskPi Super6c (6x CM4 @ 1.5 GHz)](https://www.jeffgeerling.com/blog/2022/pi-cluster-vs-ampere-altra-max-128-core-arm-cpu) | 60.293 Gflops | 40W | 1.50 Gflops/W |

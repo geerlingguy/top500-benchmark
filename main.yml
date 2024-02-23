@@ -128,6 +128,14 @@
     host_ips: []
 
   tasks:
+    - name: Ensure .ssh directory exists.
+      ansible.builtin.file:
+        path: "{{ ssh_user_home }}/.ssh"
+        state: directory
+        owner: "{{ ssh_user }}"
+        group: "{{ ssh_user }}"
+        mode: 0700
+
     - name: Generate an OpenSSH keypair.
       community.crypto.openssh_keypair:
         path: "{{ ssh_user_home }}/.ssh/id_rsa"
@@ -215,3 +223,4 @@
 
     - name: Output the results.
       debug: var=mpirun_output.stdout
+      run_once: true
