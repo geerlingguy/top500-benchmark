@@ -121,6 +121,8 @@ Here are a few of the results I've acquired in my testing:
 | [Turing Pi 2 (4x CM4 @ 2.0 GHz)](https://www.jeffgeerling.com/blog/2021/turing-pi-2-4-raspberry-pi-nodes-on-mini-itx-board) | Arm | 51.327 Gflops | 33W | 1.54 Gflops/W |
 | [DeskPi Super6c (6x CM4 @ 1.5 GHz)](https://www.jeffgeerling.com/blog/2022/pi-cluster-vs-ampere-altra-max-128-core-arm-cpu) | Arm | 60.293 Gflops | 40W | 1.50 Gflops/W |
 | [DeskPi Super6c (6x CM4 @ 2.0 GHz)](https://www.jeffgeerling.com/blog/2022/pi-cluster-vs-ampere-altra-max-128-core-arm-cpu) | Arm | 70.338 Gflops | 51W | 1.38 Gflops/W |
+| [Radxa CM5 (RK3588S2 8-core)](https://github.com/geerlingguy/top500-benchmark/issues/31) | Arm | 48.619 Gflops | 10W | 4.86 Gflops/W |
+| [Radxa ROCK 5C (RK3588S2 8-core)](https://github.com/geerlingguy/top500-benchmark/issues/32) | Arm | 49.285 Gflops | 12W | 4.11 Gflops/W |
 | [Radxa ROCK 5B (RK3588 8-core)](https://github.com/geerlingguy/top500-benchmark/issues/8) | Arm | 51.382 Gflops | 12W | 4.32 Gflops/W |
 | [Orange Pi 5 (RK3588S 8-core)](https://github.com/geerlingguy/top500-benchmark/issues/14) | Arm | 53.333 Gflops | 11.5W | 4.64 Gflops/W |
 | [Orange Pi CM4 (RK3566 4-core)](https://github.com/geerlingguy/top500-benchmark/issues/23) | Arm | 5.604 Gflops | 4.0W | 1.40 Gflop/W |
