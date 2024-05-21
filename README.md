@@ -115,6 +115,7 @@ Here are a few of the results I've acquired in my testing:
 |--- |--- |--- |--- |--- |
 | [Raspberry Pi 5 (BCM2712 @ 2.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/18) | Arm | 30.249 Gflops | 11W | 2.75 Gflops/W |
 | [Raspberry Pi 4 (BCM2711 @ 1.8 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/13) | Arm | 11.889 Gflops | 7.2W | 1.65 Gflops/W |
+| [Raspberry Pi CM4 (BCM2711 @ 1.5 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/33) | Arm | 11.433 Gflops | 5.2W | 2.20 Gflops/W |
 | [Raspberry Pi Zero 2 W (RP3A0-AU @ 1.0 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/26) | Arm | 0.370 Gflops | 2.1W | 0.18 Gflops/W |
 | [Turing Machines RK1 (RK3588 8-core)](https://github.com/geerlingguy/top500-benchmark/issues/22) | Arm | 59.810 Gflops | 18.1 | 3.30 Gflops/W |
 | [Turing Pi 2 (4x RK1 @ 2.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/27) | Arm | 224.60 Gflops | 73W | 3.08 Gflops/W |
