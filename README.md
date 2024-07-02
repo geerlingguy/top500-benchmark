@@ -138,6 +138,7 @@ Here are a few of the results I've acquired in my testing (sorted by efficiency,
 | AMD Ryzen 5 5600x @ 3.7 GHz | x86 | 229 Gflops | 196W | 1.16 Gflops/W |
 | [Milk-V Mars CM JH7110 4-core](https://github.com/geerlingguy/top500-benchmark/issues/20) | RISC-V | 1.99 Gflops | 3.6W | 0.55 Gflops/W |
 | [Lichee Console 4A TH1520 4-core](https://github.com/geerlingguy/top500-benchmark/issues/20) | RISC-V | 1.99 Gflops | 3.6W | 0.55 Gflops/W |
+| [Milk-V Mars JH7110 4-core](https://github.com/geerlingguy/top500-benchmark/issues/35) | RISC-V | 2.06 Gflops | 4.7W | 0.44 Gflops/W |
 | [Raspberry Pi Zero 2 W (RP3A0-AU @ 1.0 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/26) | Arm | 0.370 Gflops | 2.1W | 0.18 Gflops/W |
 | [M2 Pro MacBook Pro (1x M2 Pro, in Asahi Linux)](https://github.com/geerlingguy/top500-benchmark/issues/21#issuecomment-1792425949) | Arm | 296.93 Gflops | N/A | N/A |
 | M2 MacBook Air (1x M2 @ 3.5 GHz, in Docker) | Arm | 104.68 Gflops | N/A | N/A |
