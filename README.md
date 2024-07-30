@@ -126,7 +126,7 @@ Here are a few of the results I've acquired in my testing (sorted by efficiency,
 | [Turing Pi 2 (4x RK1 @ 2.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/27) | Arm | 224.60 Gflops | 73W | 3.08 Gflops/W |
 | [Raspberry Pi 5 (BCM2712 @ 2.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/18) | Arm | 30.249 Gflops | 11W | 2.75 Gflops/W |
 | [LattePanda Mu (1x N100 @ 3.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/30) | x86 | 62.851 Gflops | 25W | 2.51 Gflops/W |
-| [Radxa X4 (1x N100 @ 3.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/30) | x86 | 37.224 Gflops | 16W | 2.33 Gflops/W |
+| [Radxa X4 (1x N100 @ 3.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/38) | x86 | 37.224 Gflops | 16W | 2.33 Gflops/W |
 | [Raspberry Pi CM4 (BCM2711 @ 1.5 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/33) | Arm | 11.433 Gflops | 5.2W | 2.20 Gflops/W |
 | [Ampere Altra Max M128-30 @ 3.0 GHz](https://github.com/geerlingguy/top500-benchmark/issues/3) | Arm | 953.47 Gflops | 500W | 1.91 Gflops/W |
 | [Turing Pi 2 (4x CM4 @ 1.5 GHz)](https://www.jeffgeerling.com/blog/2021/turing-pi-2-4-raspberry-pi-nodes-on-mini-itx-board) | Arm | 44.942 Gflops | 24.5W | 1.83 Gflops/W |
