@@ -126,6 +126,7 @@ Here are a few of the results I've acquired in my testing (sorted by efficiency,
 | [Turing Pi 2 (4x RK1 @ 2.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/27) | Arm | 224.60 Gflops | 73W | 3.08 Gflops/W |
 | [Raspberry Pi 5 (BCM2712 @ 2.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/18) | Arm | 30.249 Gflops | 11W | 2.75 Gflops/W |
 | [LattePanda Mu (1x N100 @ 3.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/30) | x86 | 62.851 Gflops | 25W | 2.51 Gflops/W |
+| [Radxa X4 (1x N100 @ 3.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/30) | x86 | 37.224 Gflops | 16W | 2.33 Gflops/W |
 | [Raspberry Pi CM4 (BCM2711 @ 1.5 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/33) | Arm | 11.433 Gflops | 5.2W | 2.20 Gflops/W |
 | [Ampere Altra Max M128-30 @ 3.0 GHz](https://github.com/geerlingguy/top500-benchmark/issues/3) | Arm | 953.47 Gflops | 500W | 1.91 Gflops/W |
 | [Turing Pi 2 (4x CM4 @ 1.5 GHz)](https://www.jeffgeerling.com/blog/2021/turing-pi-2-4-raspberry-pi-nodes-on-mini-itx-board) | Arm | 44.942 Gflops | 24.5W | 1.83 Gflops/W |
@@ -138,6 +139,7 @@ Here are a few of the results I've acquired in my testing (sorted by efficiency,
 | AMD Ryzen 5 5600x @ 3.7 GHz | x86 | 229 Gflops | 196W | 1.16 Gflops/W |
 | [Milk-V Mars CM JH7110 4-core](https://github.com/geerlingguy/top500-benchmark/issues/20) | RISC-V | 1.99 Gflops | 3.6W | 0.55 Gflops/W |
 | [Lichee Console 4A TH1520 4-core](https://github.com/geerlingguy/top500-benchmark/issues/20) | RISC-V | 1.99 Gflops | 3.6W | 0.55 Gflops/W |
+| [Milk-V Jupiter Spacemit X60 8-core](https://github.com/geerlingguy/top500-benchmark/issues/37) | RISC-V | 5.66 Gflops | 10.6W | 0.55 Gflops/W |
 | [Milk-V Mars JH7110 4-core](https://github.com/geerlingguy/top500-benchmark/issues/35) | RISC-V | 2.06 Gflops | 4.7W | 0.44 Gflops/W |
 | [Raspberry Pi Zero 2 W (RP3A0-AU @ 1.0 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/26) | Arm | 0.370 Gflops | 2.1W | 0.18 Gflops/W |
 | [M2 Pro MacBook Pro (1x M2 Pro, in Asahi Linux)](https://github.com/geerlingguy/top500-benchmark/issues/21#issuecomment-1792425949) | Arm | 296.93 Gflops | N/A | N/A |
