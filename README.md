@@ -118,6 +118,7 @@ Here are a few of the results I've acquired in my testing (sorted by efficiency,
 | [Orange Pi 5 (RK3588S 8-core)](https://github.com/geerlingguy/top500-benchmark/issues/14) | Arm | 53.333 Gflops | 11.5W | 4.64 Gflops/W |
 | [Radxa ROCK 5B (RK3588 8-core)](https://github.com/geerlingguy/top500-benchmark/issues/8) | Arm | 51.382 Gflops | 12W | 4.32 Gflops/W |
 | [Ampere Altra Max M128-28 @ 2.8 GHz](https://github.com/geerlingguy/top500-benchmark/issues/17) | Arm | 1,265.5 Gflops | 296W | 4.27 Gflops/W |
+| [Orange Pi 5 Max (RK3588 8-core)](https://github.com/geerlingguy/top500-benchmark/issues/39) | Arm | 52.924 Gflops | 12.8W | 4.13 Gflops/W |
 | [Radxa ROCK 5C (RK3588S2 8-core)](https://github.com/geerlingguy/top500-benchmark/issues/32) | Arm | 49.285 Gflops | 12W | 4.11 Gflops/W |
 | [Ampere Altra Max M96-28 @ 2.8 GHz](https://github.com/geerlingguy/top500-benchmark/issues/10) | Arm | 1,188.3 Gflops | 295W | 4.01 Gflops/W |
 | [M1 Max Mac Studio (1x M1 Max @ 3.2 GHz, in Docker)](https://github.com/geerlingguy/top500-benchmark/issues/4) | Arm | 264.32 Gflops | 66W | 4.00 Gflops/W |
