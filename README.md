@@ -140,7 +140,8 @@ Here are a few of the results I've acquired in my testing (sorted by efficiency,
 | AMD Ryzen 5 5600x @ 3.7 GHz | x86 | 229 Gflops | 196W | 1.16 Gflops/W |
 | [Milk-V Mars CM JH7110 4-core](https://github.com/geerlingguy/top500-benchmark/issues/20) | RISC-V | 1.99 Gflops | 3.6W | 0.55 Gflops/W |
 | [Lichee Console 4A TH1520 4-core](https://github.com/geerlingguy/top500-benchmark/issues/20) | RISC-V | 1.99 Gflops | 3.6W | 0.55 Gflops/W |
-| [Milk-V Jupiter Spacemit X60 8-core](https://github.com/geerlingguy/top500-benchmark/issues/37) | RISC-V | 5.66 Gflops | 10.6W | 0.55 Gflops/W |
+| [Milk-V Jupiter SpacemiT X60 8-core](https://github.com/geerlingguy/top500-benchmark/issues/37) | RISC-V | 5.66 Gflops | 10.6W | 0.55 Gflops/W |
+| [Sipeed Lichee Pi 3A SpacemiT K1 8-core](https://github.com/geerlingguy/top500-benchmark/issues/42) | RISC-V | 4.95 Gflops | 9.1W | 0.54 Gflops/W |
 | [Milk-V Mars JH7110 4-core](https://github.com/geerlingguy/top500-benchmark/issues/35) | RISC-V | 2.06 Gflops | 4.7W | 0.44 Gflops/W |
 | [Raspberry Pi Zero 2 W (RP3A0-AU @ 1.0 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/26) | Arm | 0.370 Gflops | 2.1W | 0.18 Gflops/W |
 | [M2 Pro MacBook Pro (1x M2 Pro, in Asahi Linux)](https://github.com/geerlingguy/top500-benchmark/issues/21#issuecomment-1792425949) | Arm | 296.93 Gflops | N/A | N/A |
