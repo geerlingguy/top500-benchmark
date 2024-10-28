@@ -41,7 +41,9 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Set up files for the test.
-        run: cp example.hosts.ini hosts.ini
+        run: |
+          cp example.hosts.ini hosts.ini
+          cp example.config.yml config.yml
 
       - name: Check the syntax of the HPL benchmark playbook.
         run: ansible-playbook main.yml --syntax-check
