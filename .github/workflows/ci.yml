@@ -45,3 +45,6 @@ jobs:
 
       - name: Check the syntax of the HPL benchmark playbook.
         run: ansible-playbook main.yml --syntax-check
+
+      - name: Run the playbook but not the HPL benchmark.
+        run: ansible-playbook main.yml --tags "setup"

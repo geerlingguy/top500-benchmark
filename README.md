@@ -1,6 +1,6 @@
 # Top500 Benchmark - HPL Linpack
 
-[![CI](https://github.com/geerlingguy/top500-benchmark/workflows/CI/badge.svg?branch=master&event=push)](https://github.com/geerlingguy/top500-benchmark/actions?query=workflow%3ACI)
+[![CI](https://github.com/geerlingguy/top500-benchmark/actions/workflows/ci.yml/badge.svg)](https://github.com/geerlingguy/top500-benchmark/actions/workflows/ci.yml)
 
 A common generic benchmark for clusters (or extremly powerful single node workstations) is Linpack, or HPL (High Performance Linpack), which is famous for its use in rankings in the [Top500 supercomputer list](https://top500.org) over the past few decades.
 
