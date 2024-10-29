@@ -11,7 +11,7 @@
     chdir: "{{ hpl_root }}/tmp/blis-build"
     creates: "{{ hpl_root }}/tmp/COMPILE_BLIS_COMPLETE"
   loop:
-    - ./configure --prefix=/opt/blis {{ blis_configure_options | default('auto') }}
+    - ./configure --prefix=/opt/blis {{ blis_configure_options | default('auto', true) }}
     - make -j{{ ansible_processor_vcpus }}
     - make install
   become: true
