@@ -116,9 +116,9 @@ Here are a few of the results I've acquired in my testing (sorted by efficiency,
 | [Radxa CM5 (RK3588S2 8-core)](https://github.com/geerlingguy/top500-benchmark/issues/31) | Arm | 48.619 Gflops | 10W | 4.86 Gflops/W |
 | [Ampere Altra Q64-22 @ 2.2 GHz](https://github.com/geerlingguy/top500-benchmark/issues/19) | Arm | 655.90 Gflops | 140W | 4.69 Gflops/W |
 | [Orange Pi 5 (RK3588S 8-core)](https://github.com/geerlingguy/top500-benchmark/issues/14) | Arm | 53.333 Gflops | 11.5W | 4.64 Gflops/W |
+| [AmpereOne A192-32X @ 3.2 GHz](https://github.com/geerlingguy/top500-benchmark/issues/43) | Arm | 3,026.9 Gflops | 692W | 4.37 Gflops/W |
 | [Radxa ROCK 5B (RK3588 8-core)](https://github.com/geerlingguy/top500-benchmark/issues/8) | Arm | 51.382 Gflops | 12W | 4.32 Gflops/W |
 | [Ampere Altra Max M128-28 @ 2.8 GHz](https://github.com/geerlingguy/top500-benchmark/issues/17) | Arm | 1,265.5 Gflops | 296W | 4.27 Gflops/W |
-| [AmpereOne A192-32X @ 3.2 GHz](https://github.com/geerlingguy/top500-benchmark/issues/43) | Arm | 2996 Gflops | 725W | 4.13 Gflops/W |
 | [Orange Pi 5 Max (RK3588 8-core)](https://github.com/geerlingguy/top500-benchmark/issues/39) | Arm | 52.924 Gflops | 12.8W | 4.13 Gflops/W |
 | [Radxa ROCK 5C (RK3588S2 8-core)](https://github.com/geerlingguy/top500-benchmark/issues/32) | Arm | 49.285 Gflops | 12W | 4.11 Gflops/W |
 | [Ampere Altra Max M96-28 @ 2.8 GHz](https://github.com/geerlingguy/top500-benchmark/issues/10) | Arm | 1,188.3 Gflops | 295W | 4.01 Gflops/W |
