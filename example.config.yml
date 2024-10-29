@@ -8,6 +8,7 @@ mpich_version: "4.2.3"
 linear_algebra_library: blis  # 'atlas', 'openblas', or 'blis'
 linear_algebra_blis_version: master  # only used for blis
 linear_algebra_openblas_version: develop  # only used for openblas
+blis_configure_options: ""
 
 # Home directory of the user for whom SSH keys will be configured.
 ssh_user: pi
