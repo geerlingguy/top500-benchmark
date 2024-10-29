@@ -1,7 +1,7 @@
 ---
 - name: Download OpenBLAS linear algebra library.
   ansible.builtin.git:
-    repo: 'https://github.com/xianyi/OpenBLAS'
+    repo: 'https://github.com/OpenMathLib/OpenBLAS.git'
     version: "{{ linear_algebra_openblas_version }}"
     dest: "{{ hpl_root }}/tmp/openblas-build"
 
