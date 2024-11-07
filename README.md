@@ -4,6 +4,8 @@
 
 A common generic benchmark for clusters (or extremly powerful single node workstations) is Linpack, or HPL (High Performance Linpack), which is famous for its use in rankings in the [Top500 supercomputer list](https://top500.org) over the past few decades.
 
+The benchmark solves a random dense linear system in double-precision (64 bits / FP64) arithmetic ([source](https://netlib.org/benchmark/hpl/)).
+
 I wanted to see where my various clusters and workstations would rank, historically ([you can compare to past lists here](https://hpl-calculator.sourceforge.net/hpl-calculations.php)), so I built this Ansible playbook which installs all the necessary tooling for HPL to run, connects all the nodes together via SSH, then runs the benchmark and outputs the result.
 
 ## Why not PTS?
