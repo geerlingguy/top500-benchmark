@@ -86,7 +86,7 @@ ansible-playbook main.yml --tags "setup,benchmark"
 > For testing, you can start an Ubuntu docker container:
 > 
 > ```
-> docker run --name top500 -it -v $PWD:/code geerlingguy/docker-ubuntu2204-ansible:latest bash
+> docker run --name top500 -it -v $PWD:/code geerlingguy/docker-ubuntu2404-ansible:latest bash
 > ```
 >
 > Then go into the code directory (`cd /code`) and run the playbook using the command above.
