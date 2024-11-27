@@ -129,6 +129,7 @@ Here are a few of the results I've acquired in my testing (sorted by efficiency,
 | [M1 Max Mac Studio (1x M1 Max @ 3.2 GHz, in Docker)](https://github.com/geerlingguy/top500-benchmark/issues/4) | Arm | 264.32 Gflops | 66W | 4.00 Gflops/W |
 | [Ampere Altra Q32-17 @ 1.7 GHz](https://github.com/geerlingguy/top500-benchmark/issues/25) | Arm | 332.07 Gflops | 100W | 3.32 Gflops/W |
 | [Turing Machines RK1 (RK3588 8-core)](https://github.com/geerlingguy/top500-benchmark/issues/22) | Arm | 59.810 Gflops | 18.1 | 3.30 Gflops/W |
+| [Raspberry Pi CM5 (BCM2712 @ 2.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/48) | Arm | 31.477 Gflops | 10.0 | 3.14 Gflops/W |
 | [Turing Pi 2 (4x RK1 @ 2.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/27) | Arm | 224.60 Gflops | 73W | 3.08 Gflops/W |
 | [Raspberry Pi 5 (BCM2712 @ 2.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/18) | Arm | 30.249 Gflops | 11W | 2.75 Gflops/W |
 | [LattePanda Mu (1x N100 @ 3.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/30) | x86 | 62.851 Gflops | 25W | 2.51 Gflops/W |
