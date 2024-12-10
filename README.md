@@ -127,6 +127,7 @@ Here are a few of the results I've acquired in my testing (sorted by efficiency,
 | [Radxa ROCK 5C (RK3588S2 8-core)](https://github.com/geerlingguy/top500-benchmark/issues/32) | Arm | 49.285 Gflops | 12W | 4.11 Gflops/W |
 | [Ampere Altra Max M96-28 @ 2.8 GHz](https://github.com/geerlingguy/top500-benchmark/issues/10) | Arm | 1,188.3 Gflops | 295W | 4.01 Gflops/W |
 | [M1 Max Mac Studio (1x M1 Max @ 3.2 GHz, in Docker)](https://github.com/geerlingguy/top500-benchmark/issues/4) | Arm | 264.32 Gflops | 66W | 4.00 Gflops/W |
+| [Ampere Altra M128-30 @ 3.0 GHz](https://github.com/geerlingguy/top500-benchmark/issues/44) | Arm | 1,652.4 Gflops | 440W | 3.76 Gflops/W |
 | [Raspberry Pi CM5 (BCM2712 @ 2.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/48) | Arm | 32.152 Gflops | 9.2W | 3.49 Gflops/W |
 | [Ampere Altra Q32-17 @ 1.7 GHz](https://github.com/geerlingguy/top500-benchmark/issues/25) | Arm | 332.07 Gflops | 100W | 3.32 Gflops/W |
 | [Turing Machines RK1 (RK3588 8-core)](https://github.com/geerlingguy/top500-benchmark/issues/22) | Arm | 59.810 Gflops | 18.1W | 3.30 Gflops/W |
