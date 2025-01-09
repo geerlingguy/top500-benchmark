@@ -134,7 +134,7 @@ Here are a few of the results I've acquired in my testing (sorted by efficiency,
 | [Raspberry Pi 500 (BCM2712 @ 2.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/50) | Arm | 35.586 Gflops | 11W | 3.24 Gflops/W |
 | [Turing Pi 2 (4x RK1 @ 2.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/27) | Arm | 224.60 Gflops | 73W | 3.08 Gflops/W |
 | [Raspberry Pi 5 16 GB (BCM2712 @ 2.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/51) | Arm | 36.737 Gflops | 12.0W | 3.06 Gflops/W |
-| [Raspberry Pi 5 (BCM2712 @ 2.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/18) | Arm | 35.169 Gflops | 12.7W | 2.77 Gflops/W |
+| [Raspberry Pi 5 8 GB (BCM2712 @ 2.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/18) | Arm | 35.169 Gflops | 12.7W | 2.77 Gflops/W |
 | [LattePanda Mu (1x N100 @ 3.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/30) | x86 | 62.851 Gflops | 25W | 2.51 Gflops/W |
 | [Radxa X4 (1x N100 @ 3.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/38) | x86 | 37.224 Gflops | 16W | 2.33 Gflops/W |
 | [Raspberry Pi CM4 (BCM2711 @ 1.5 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/33) | Arm | 11.433 Gflops | 5.2W | 2.20 Gflops/W |
