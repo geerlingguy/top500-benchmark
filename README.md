@@ -117,19 +117,19 @@ Here are a few of the results I've acquired in my testing (sorted by efficiency,
 |--- |--- |--- |--- |--- |
 | [M4 Mac mini (1x M4 @ 4.4 GHz, in Docker)](https://github.com/geerlingguy/top500-benchmark/issues/47) | Arm | 299.93 Gflops | 39.6W | 7.57 Gflops/W |
 | [Radxa CM5 (RK3588S2 8-core)](https://github.com/geerlingguy/top500-benchmark/issues/31) | Arm | 48.619 Gflops | 10W | 4.86 Gflops/W |
-| [AmpereOne A192-26X @ 2.6 GHz](https://github.com/geerlingguy/top500-benchmark/issues/43) | Arm | 2,745.1 Gflops | 570W | 4.82 Gflops/W |
-| [Ampere Altra Q64-22 @ 2.2 GHz](https://github.com/geerlingguy/top500-benchmark/issues/19) | Arm | 655.90 Gflops | 140W | 4.69 Gflops/W |
+| [Supermicro AmpereOne (A192-26X @ 2.6 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/43) | Arm | 2,745.1 Gflops | 570W | 4.82 Gflops/W |
+| [Ampere Altra Dev Kit (Q64-22 @ 2.2 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/19) | Arm | 655.90 Gflops | 140W | 4.69 Gflops/W |
 | [Orange Pi 5 (RK3588S 8-core)](https://github.com/geerlingguy/top500-benchmark/issues/14) | Arm | 53.333 Gflops | 11.5W | 4.64 Gflops/W |
-| [AmpereOne A192-32X @ 3.2 GHz](https://github.com/geerlingguy/top500-benchmark/issues/43) | Arm | 3,026.9 Gflops | 692W | 4.37 Gflops/W |
+| [Supermicro AmpereOne (A192-32X @ 3.2 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/43) | Arm | 3,026.9 Gflops | 692W | 4.37 Gflops/W |
 | [Radxa ROCK 5B (RK3588 8-core)](https://github.com/geerlingguy/top500-benchmark/issues/8) | Arm | 51.382 Gflops | 12W | 4.32 Gflops/W |
-| [Ampere Altra Max M128-28 @ 2.8 GHz](https://github.com/geerlingguy/top500-benchmark/issues/17) | Arm | 1,265.5 Gflops | 296W | 4.27 Gflops/W |
+| [Ampere Altra Developer Platform (M128-28 @ 2.8 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/17) | Arm | 1,265.5 Gflops | 296W | 4.27 Gflops/W |
 | [Orange Pi 5 Max (RK3588 8-core)](https://github.com/geerlingguy/top500-benchmark/issues/39) | Arm | 52.924 Gflops | 12.8W | 4.13 Gflops/W |
 | [Radxa ROCK 5C (RK3588S2 8-core)](https://github.com/geerlingguy/top500-benchmark/issues/32) | Arm | 49.285 Gflops | 12W | 4.11 Gflops/W |
-| [Ampere Altra Max M96-28 @ 2.8 GHz](https://github.com/geerlingguy/top500-benchmark/issues/10) | Arm | 1,188.3 Gflops | 295W | 4.01 Gflops/W |
+| [Ampere Altra Developer Platform (M96-28 @ 2.8 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/10) | Arm | 1,188.3 Gflops | 295W | 4.01 Gflops/W |
 | [M1 Max Mac Studio (1x M1 Max @ 3.2 GHz, in Docker)](https://github.com/geerlingguy/top500-benchmark/issues/4) | Arm | 264.32 Gflops | 66W | 4.00 Gflops/W |
-| [Ampere Altra M128-30 @ 3.0 GHz](https://github.com/geerlingguy/top500-benchmark/issues/44) | Arm | 1,652.4 Gflops | 440W | 3.76 Gflops/W |
+| [System76 Thelio Astra (Ampere Altra Max M128-30 @ 3.0 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/44) | Arm | 1,652.4 Gflops | 440W | 3.76 Gflops/W |
 | [Raspberry Pi CM5 (BCM2712 @ 2.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/48) | Arm | 32.152 Gflops | 9.2W | 3.49 Gflops/W |
-| [Ampere Altra Q32-17 @ 1.7 GHz](https://github.com/geerlingguy/top500-benchmark/issues/25) | Arm | 332.07 Gflops | 100W | 3.32 Gflops/W |
+| [45Drives HL15 (Ampere Altra Q32-17 @ 1.7 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/25) | Arm | 332.07 Gflops | 100W | 3.32 Gflops/W |
 | [Turing Machines RK1 (RK3588 8-core)](https://github.com/geerlingguy/top500-benchmark/issues/22) | Arm | 59.810 Gflops | 18.1W | 3.30 Gflops/W |
 | [Raspberry Pi 500 (BCM2712 @ 2.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/50) | Arm | 35.586 Gflops | 11W | 3.24 Gflops/W |
 | [Turing Pi 2 (4x RK1 @ 2.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/27) | Arm | 224.60 Gflops | 73W | 3.08 Gflops/W |
@@ -138,7 +138,7 @@ Here are a few of the results I've acquired in my testing (sorted by efficiency,
 | [LattePanda Mu (1x N100 @ 3.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/30) | x86 | 62.851 Gflops | 25W | 2.51 Gflops/W |
 | [Radxa X4 (1x N100 @ 3.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/38) | x86 | 37.224 Gflops | 16W | 2.33 Gflops/W |
 | [Raspberry Pi CM4 (BCM2711 @ 1.5 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/33) | Arm | 11.433 Gflops | 5.2W | 2.20 Gflops/W |
-| [Ampere Altra Max M128-30 @ 3.0 GHz](https://github.com/geerlingguy/top500-benchmark/issues/3) | Arm | 953.47 Gflops | 500W | 1.91 Gflops/W |
+| [Supermicro Ampere Altra (M128-30 @ 3.0 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/3) | Arm | 953.47 Gflops | 500W | 1.91 Gflops/W |
 | [GMKtec NucBox G3 Plus (1x N150 @ 3.6 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/52) | Intel | 47.353 Gflops | 25.3W | 1.87 Glops/W |
 | [Turing Pi 2 (4x CM4 @ 1.5 GHz)](https://www.jeffgeerling.com/blog/2021/turing-pi-2-4-raspberry-pi-nodes-on-mini-itx-board) | Arm | 44.942 Gflops | 24.5W | 1.83 Gflops/W |
 | [Lenovo M710q Tiny (1x i5-7400T @ 2.4 GHz)](https://www.jeffgeerling.com/blog/2023/rock-5-b-not-raspberry-pi-killer-yet) | x86 | 72.472 Gflops | 41W | 1.76 Gflops/W |
@@ -148,12 +148,12 @@ Here are a few of the results I've acquired in my testing (sorted by efficiency,
 | [DeskPi Super6c (6x CM4 @ 1.5 GHz)](https://www.jeffgeerling.com/blog/2022/pi-cluster-vs-ampere-altra-max-128-core-arm-cpu) | Arm | 60.293 Gflops | 40W | 1.50 Gflops/W |
 | [Orange Pi CM4 (RK3566 4-core)](https://github.com/geerlingguy/top500-benchmark/issues/23) | Arm | 5.604 Gflops | 4.0W | 1.40 Gflop/W |
 | [DeskPi Super6c (6x CM4 @ 2.0 GHz)](https://www.jeffgeerling.com/blog/2022/pi-cluster-vs-ampere-altra-max-128-core-arm-cpu) | Arm | 70.338 Gflops | 51W | 1.38 Gflops/W |
-| AMD Ryzen 5 5600x @ 3.7 GHz | x86 | 229 Gflops | 196W | 1.16 Gflops/W |
-| [Milk-V Mars CM JH7110 4-core](https://github.com/geerlingguy/top500-benchmark/issues/20) | RISC-V | 1.99 Gflops | 3.6W | 0.55 Gflops/W |
-| [Lichee Console 4A TH1520 4-core](https://github.com/geerlingguy/top500-benchmark/issues/20) | RISC-V | 1.99 Gflops | 3.6W | 0.55 Gflops/W |
-| [Milk-V Jupiter SpacemiT X60 8-core](https://github.com/geerlingguy/top500-benchmark/issues/37) | RISC-V | 5.66 Gflops | 10.6W | 0.55 Gflops/W |
-| [Sipeed Lichee Pi 3A SpacemiT K1 8-core](https://github.com/geerlingguy/top500-benchmark/issues/42) | RISC-V | 4.95 Gflops | 9.1W | 0.54 Gflops/W |
-| [Milk-V Mars JH7110 4-core](https://github.com/geerlingguy/top500-benchmark/issues/35) | RISC-V | 2.06 Gflops | 4.7W | 0.44 Gflops/W |
+| Custom PC (AMD 5600x @ 3.7 GHz) | x86 | 229 Gflops | 196W | 1.16 Gflops/W |
+| [Milk-V Mars CM (JH7110 4-core)](https://github.com/geerlingguy/top500-benchmark/issues/20) | RISC-V | 1.99 Gflops | 3.6W | 0.55 Gflops/W |
+| [Lichee Console 4A (TH1520 4-core)](https://github.com/geerlingguy/top500-benchmark/issues/20) | RISC-V | 1.99 Gflops | 3.6W | 0.55 Gflops/W |
+| [Milk-V Jupiter (SpacemiT X60 8-core)](https://github.com/geerlingguy/top500-benchmark/issues/37) | RISC-V | 5.66 Gflops | 10.6W | 0.55 Gflops/W |
+| [Sipeed Lichee Pi 3A (SpacemiT K1 8-core)](https://github.com/geerlingguy/top500-benchmark/issues/42) | RISC-V | 4.95 Gflops | 9.1W | 0.54 Gflops/W |
+| [Milk-V Mars (JH7110 4-core)](https://github.com/geerlingguy/top500-benchmark/issues/35) | RISC-V | 2.06 Gflops | 4.7W | 0.44 Gflops/W |
 | [Raspberry Pi Zero 2 W (RP3A0-AU @ 1.0 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/26) | Arm | 0.370 Gflops | 2.1W | 0.18 Gflops/W |
 | [M2 Pro MacBook Pro (1x M2 Pro, in Asahi Linux)](https://github.com/geerlingguy/top500-benchmark/issues/21#issuecomment-1792425949) | Arm | 296.93 Gflops | N/A | N/A |
 | M2 MacBook Air (1x M2 @ 3.5 GHz, in Docker) | Arm | 104.68 Gflops | N/A | N/A |
