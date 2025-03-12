@@ -116,6 +116,7 @@ Here are a few of the results I've acquired in my testing (sorted by efficiency,
 | Configuration | Architecture | Result | Wattage | Gflops/W |
 |--- |--- |--- |--- |--- |
 | [M4 Mac mini (1x M4 @ 4.4 GHz, in Docker)](https://github.com/geerlingguy/top500-benchmark/issues/47) | Arm | 299.93 Gflops | 39.6W | 7.57 Gflops/W |
+| [M4 Max Mac Studio (1x M4 Max @ 4.51 GHz, in Docker)](https://github.com/geerlingguy/top500-benchmark/issues/57) | Arm | 685.00 Gflops | 120W | 5.71 Gflops/W |
 | [Radxa CM5 (RK3588S2 8-core)](https://github.com/geerlingguy/top500-benchmark/issues/31) | Arm | 48.619 Gflops | 10W | 4.86 Gflops/W |
 | [Supermicro AmpereOne (A192-26X @ 2.6 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/43) | Arm | 2,745.1 Gflops | 570W | 4.82 Gflops/W |
 | [Ampere Altra Dev Kit (Q64-22 @ 2.2 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/19) | Arm | 655.90 Gflops | 140W | 4.69 Gflops/W |
