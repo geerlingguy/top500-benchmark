@@ -41,7 +41,7 @@
 #  DATA OR PROFITS; OR BUSINESS INTERRUPTION)  HOWEVER CAUSED AND ON ANY
 #  THEORY OF LIABILITY, WHETHER IN CONTRACT,  STRICT LIABILITY,  OR TORT
 #  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-#  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
+#  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 # ######################################################################
 #
 # ----------------------------------------------------------------------
@@ -81,15 +81,15 @@ HPLlib       = $(LIBdir)/libhpl.a
 # header files,  MPlib  is defined  to be the name of  the library to be
 # used. The variable MPdir is only used for defining MPinc and MPlib.
 #
-MPdir        = /usr/local
-MPinc        = -I /usr/local/include
-MPlib        = /usr/local/lib/libmpich.so
+MPdir        = {{ hpl_root }}/mpich
+MPinc        = -I $(MPdir)/include
+MPlib        = -L $(MPdir)/lib -lmpich
 #
 # ----------------------------------------------------------------------
 # - Linear Algebra library (BLAS or VSIPL) -----------------------------
 # ----------------------------------------------------------------------
 # LAinc tells the  C  compiler where to find the Linear Algebra  library
-# header files,  LAlib  is defined  to be the name of  the library to be 
+# header files,  LAlib  is defined  to be the name of  the library to be
 # used. The variable LAdir is only used for defining LAinc and LAlib.
 #
 {% if linear_algebra_library == 'atlas' %}
@@ -97,12 +97,12 @@ LAdir        = {{ hpl_root }}/tmp/atlas-build
 LAinc        =
 LAlib        = $(LAdir)/lib/libf77blas.a $(LAdir)/lib/libatlas.a
 {% elif linear_algebra_library == 'blis' %}
-LAdir        = /opt/blis
-LAinc        =
+LAdir        = {{ hpl_root }}/blis
+LAinc        = -I $(LAdir)/include
 LAlib        = $(LAdir)/lib/libblis.a -lpthread
 {% elif linear_algebra_library == 'openblas' %}
-LAdir        = /opt/openblas
-LAinc        =
+LAdir        = {{ hpl_root }}/openblas
+LAinc        = -I $(LAdir)/include
 LAlib        = $(LAdir)/lib/libopenblas.a -lpthread
 {% endif %}
 #
@@ -176,11 +176,11 @@ HPL_DEFS     = $(F2CDEFS) $(HPL_OPTS) $(HPL_INCLUDES)
 # - Compilers / linkers - Optimization flags ---------------------------
 # ----------------------------------------------------------------------
 #
-CC           = mpicc
+CC           = {{ hpl_root }}/mpich/bin/mpicc
 CCNOOPT      = $(HPL_DEFS)
 CCFLAGS      = $(HPL_DEFS)
 #
-LINKER       = mpif77
+LINKER       = {{ hpl_root }}/mpich/bin/mpif77
 LINKFLAGS    =
 #
 ARCHIVER     = ar

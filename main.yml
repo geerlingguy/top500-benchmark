@@ -45,8 +45,10 @@
       args:
         chdir: "{{ hpl_root }}/tmp/mpich-{{ mpich_version }}"
         creates: "{{ hpl_root }}/tmp/COMPILE_MPI_COMPLETE"
+      environment:
+        - FFLAGS: "-fallow-argument-mismatch"
       loop:
-        - ./configure --with-device=ch3:sock FFLAGS=-fallow-argument-mismatch
+        - ./configure --prefix="{{ hpl_root }}/mpich" --with-device=ch3:sock
         - "make -j{{ ansible_processor_nproc }}"
 
     - name: Install MPI.
@@ -212,7 +214,8 @@
       when: ansible_os_family == "RedHat"
 
     - name: Run the benchmark.
-      ansible.builtin.command: mpirun -f cluster-hosts ./xhpl
+      ansible.builtin.command: >-
+        "{{ hpl_root }}/mpich/bin/mpirun" -f cluster-hosts ./xhpl
       args:
         chdir: "{{ hpl_root }}/tmp/hpl-2.3/bin/top500"
       register: mpirun_output

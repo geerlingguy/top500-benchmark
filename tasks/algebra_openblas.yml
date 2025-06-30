@@ -12,7 +12,7 @@
     creates: "{{ hpl_root }}/tmp/COMPILE_OPENBLAS_COMPLETE"
   loop:
     - make -j{{ ansible_processor_vcpus }}
-    - make PREFIX=/opt/openblas install
+    - make PREFIX="{{ hpl_root }}/openblas" install
   become: true
 
 - name: Create 'COMPILE_OPENBLAS_COMPLETE' file.
