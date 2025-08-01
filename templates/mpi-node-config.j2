@@ -1,3 +1,4 @@
 {% for host in groups['cluster'] %}
+{# NOTE: Use ansible_processor_cores if you have trouble with CPU threads. #}
 {{ hostvars[host].ansible_default_ipv4.address }}:{{ hostvars[host].ansible_processor_vcpus }}
 {% endfor %}
