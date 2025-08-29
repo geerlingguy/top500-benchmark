@@ -137,6 +137,7 @@ Here are a few of the results I've acquired in my testing (sorted by efficiency,
 | [Raspberry Pi 5 16 GB (BCM2712 @ 2.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/51) | Arm | 36.737 Gflops | 12.0W | 3.06 Gflops/W |
 | [Raspberry Pi 5 8 GB (BCM2712 @ 2.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/18) | Arm | 35.169 Gflops | 12.7W | 2.77 Gflops/W |
 | [LattePanda Mu (1x N100 @ 3.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/30) | x86 | 62.851 Gflops | 25W | 2.51 Gflops/W |
+| [Compute Blade Cluster (CM5 16GB x10)](https://github.com/geerlingguy/top500-benchmark/issues/68) | Arm | 324.66 Gflops | 132W | 2.46 Gflops/W |
 | [Radxa X4 (1x N100 @ 3.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/38) | x86 | 37.224 Gflops | 16W | 2.33 Gflops/W |
 | [Framework Desktop Mainboard (AMD AI Max+ 395 @ 5.1 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/66) | x86 | 307.84 Gflops | 135.7W | 2.27 Gflops/W |
 | [Raspberry Pi CM4 (BCM2711 @ 1.5 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/33) | Arm | 11.433 Gflops | 5.2W | 2.20 Gflops/W |
