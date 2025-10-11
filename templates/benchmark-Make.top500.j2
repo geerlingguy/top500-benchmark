@@ -166,7 +166,7 @@ HPL_LIBS     = $(HPLlib) $(LAlib) $(MPlib)
 #    *) call the BLAS Fortran 77 interface,
 #    *) not display detailed timing information.
 #
-HPL_OPTS     = -flto=auto -mtune=native -O3
+HPL_OPTS     =
 #
 # ----------------------------------------------------------------------
 #
@@ -181,7 +181,7 @@ CCNOOPT      = $(HPL_DEFS)
 CCFLAGS      = $(HPL_DEFS)
 #
 LINKER       = {{ hpl_root }}/mpich/bin/mpif77
-LINKFLAGS    = $(HPL_OPTS)
+LINKFLAGS    =
 #
 ARCHIVER     = ar
 ARFLAGS      = r
