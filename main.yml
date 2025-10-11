@@ -46,10 +46,10 @@
         chdir: "{{ hpl_root }}/tmp/mpich-{{ mpich_version }}"
         creates: "{{ hpl_root }}/tmp/COMPILE_MPI_COMPLETE"
       environment:
-        - CFLAGS: "-flto=auto -march=native -mtune=native"
-        - CXXFLAGS: "-flto=auto -march=native -mtune=native"
-        - FFLAGS: "-fallow-argument-mismatch -flto=auto -march=native -mtune=native"
-        - LDFLAGS: "-flto=auto -march=native -mtune=native"
+        - CFLAGS: "-flto=auto -mtune=native"
+        - CXXFLAGS: "-flto=auto -mtune=native"
+        - FFLAGS: "-fallow-argument-mismatch -flto=auto -mtune=native"
+        - LDFLAGS: "-flto=auto -mtune=native"
       loop:
         - ./configure --enable-fast=O3,ndebug --enable-g=none --prefix="{{ hpl_root }}/mpich" --with-device=ch3:sock
         - "make -j{{ ansible_processor_nproc }}"
