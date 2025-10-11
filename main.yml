@@ -35,7 +35,7 @@
 
     - name: Download MPI (Message Passing Interface).
       ansible.builtin.unarchive:
-        src: https://www.mpich.org/static/downloads/{{ mpich_version }}/mpich-{{ mpich_version }}.tar.gz
+        src: https://github.com/pmodels/mpich/releases/download/v{{ mpich_version }}/mpich-{{ mpich_version }}.tar.gz
         dest: "{{ hpl_root }}/tmp"
         remote_src: true
         creates: "{{ hpl_root }}/tmp/mpich-{{ mpich_version }}/README"
