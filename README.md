@@ -156,6 +156,7 @@ Here are a few of the results I've acquired in my testing (sorted by efficiency,
 | Custom PC (AMD 5600x @ 3.7 GHz) | x86 | 229 Gflops | 196W | 1.16 Gflops/W |
 | [Radxa Orion O6 (CIX P1 CD8180 @ 2.6 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/54) | Arm | 36.014 Gflops | 35.7W | 1.01 Gflops/W |
 | [HiFive Premier P550 (ESWIN EIC7700X @ 1.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/56) | RISC-V | 7.181 Gflops | 8.9W | 0.81 Gflops/W |
+| [DC-ROMA RISC-V Mainboard II (P550 @ 1.8 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/77) | RISC-V | 17.759 Gflops | 32.5W | 0.55 Gflops/W |
 | [Milk-V Mars CM (JH7110 4-core)](https://github.com/geerlingguy/top500-benchmark/issues/20) | RISC-V | 1.99 Gflops | 3.6W | 0.55 Gflops/W |
 | [Lichee Console 4A (TH1520 4-core)](https://github.com/geerlingguy/top500-benchmark/issues/20) | RISC-V | 1.99 Gflops | 3.6W | 0.55 Gflops/W |
 | [Milk-V Jupiter (SpacemiT X60 8-core)](https://github.com/geerlingguy/top500-benchmark/issues/37) | RISC-V | 5.66 Gflops | 10.6W | 0.55 Gflops/W |
