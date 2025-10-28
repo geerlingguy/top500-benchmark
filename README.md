@@ -136,6 +136,7 @@ Here are a few of the results I've acquired in my testing (sorted by efficiency,
 | [Turing Pi 2 (4x RK1 @ 2.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/27) | Arm | 224.60 Gflops | 73W | 3.08 Gflops/W |
 | [Raspberry Pi 5 16 GB (BCM2712 @ 2.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/51) | Arm | 36.737 Gflops | 12.0W | 3.06 Gflops/W |
 | [Raspberry Pi 5 8 GB (BCM2712 @ 2.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/18) | Arm | 35.169 Gflops | 12.7W | 2.77 Gflops/W |
+| [Arduino Uno Q (4x Kryo-V2 @ 2.0 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/80) | Arm | 9.60 Gflops | 3.5W | 2.74 Gflops/W |
 | [LattePanda Mu (1x N100 @ 3.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/30) | x86 | 62.851 Gflops | 25W | 2.51 Gflops/W |
 | [Compute Blade Cluster (CM5 16GB x10)](https://github.com/geerlingguy/top500-benchmark/issues/68) | Arm | 324.66 Gflops | 132W | 2.46 Gflops/W |
 | [Radxa X4 (1x N100 @ 3.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/38) | x86 | 37.224 Gflops | 16W | 2.33 Gflops/W |
@@ -151,7 +152,6 @@ Here are a few of the results I've acquired in my testing (sorted by efficiency,
 | [Raspberry Pi 4 (BCM2711 @ 1.8 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/13) | Arm | 11.889 Gflops | 7.2W | 1.65 Gflops/W |
 | [Turing Pi 2 (4x CM4 @ 2.0 GHz)](https://www.jeffgeerling.com/blog/2021/turing-pi-2-4-raspberry-pi-nodes-on-mini-itx-board) | Arm | 51.327 Gflops | 33W | 1.54 Gflops/W |
 | [DeskPi Super6c (6x CM4 @ 1.5 GHz)](https://www.jeffgeerling.com/blog/2022/pi-cluster-vs-ampere-altra-max-128-core-arm-cpu) | Arm | 60.293 Gflops | 40W | 1.50 Gflops/W |
-| [Arduino Uno Q (4x Kryo-V2 @ 2.0 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/80) | Arm | 8.21 Gflops | 5.7W | 1.44 Gflops/W |
 | [Orange Pi CM4 (RK3566 4-core)](https://github.com/geerlingguy/top500-benchmark/issues/23) | Arm | 5.604 Gflops | 4.0W | 1.40 Gflops/W |
 | [DeskPi Super6c (6x CM4 @ 2.0 GHz)](https://www.jeffgeerling.com/blog/2022/pi-cluster-vs-ampere-altra-max-128-core-arm-cpu) | Arm | 70.338 Gflops | 51W | 1.38 Gflops/W |
 | Custom PC (AMD 5600x @ 3.7 GHz) | x86 | 229 Gflops | 196W | 1.16 Gflops/W |
