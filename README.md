@@ -134,7 +134,7 @@ Here are a few of the results I've acquired in my testing (sorted by efficiency,
 | [Turing Machines RK1 (RK3588 8-core)](https://github.com/geerlingguy/top500-benchmark/issues/22) | Arm | 59.810 Gflops | 18.1W | 3.30 Gflops/W |
 | [Raspberry Pi 500 (BCM2712 @ 2.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/50) | Arm | 35.586 Gflops | 11W | 3.24 Gflops/W |
 | [Turing Pi 2 (4x RK1 @ 2.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/27) | Arm | 224.60 Gflops | 73W | 3.08 Gflops/W |
-| [Raspberry Pi 5 16 GB (BCM2712 @ 2.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/51) | Arm | 36.737 Gflops | 12.0W | 3.06 Gflops/W |
+| [Raspberry Pi 5 16 GB (BCM2712 @ 2.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/51) | Arm | 37.888 Gflops | 13.8W | 2.75 Gflops/W |
 | [Raspberry Pi 5 8 GB (BCM2712 @ 2.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/18) | Arm | 35.169 Gflops | 12.7W | 2.77 Gflops/W |
 | [Arduino Uno Q (4x Kryo-V2 @ 2.0 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/80) | Arm | 9.60 Gflops | 3.5W | 2.74 Gflops/W |
 | [LattePanda Mu (1x N100 @ 3.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/30) | x86 | 62.851 Gflops | 25W | 2.51 Gflops/W |
