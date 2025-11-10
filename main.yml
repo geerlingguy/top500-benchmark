@@ -46,10 +46,10 @@
         chdir: "{{ hpl_root }}/tmp/mpich-{{ mpich_version }}"
         creates: "{{ hpl_root }}/tmp/COMPILE_MPI_COMPLETE"
       environment:
-        - CFLAGS: "-flto=auto"
-        - CXXFLAGS: "-flto=auto"
-        - FFLAGS: "-fallow-argument-mismatch -flto=auto"
-        - LDFLAGS: "-flto=auto"
+        - CFLAGS: "{{ mpich_env_cflags }}"
+        - CXXFLAGS: "{{ mpich_env_cxxflags }}"
+        - FFLAGS: "{{ mpich_env_fflags }}"
+        - LDFLAGS: "{{ mpich_env_ldflags }}"
       loop:
         - ./configure --enable-fast=O3,ndebug --enable-g=none --prefix="{{ hpl_root }}/mpich" --with-device=ch3:sock
         - "make -j{{ ansible_processor_nproc }}"

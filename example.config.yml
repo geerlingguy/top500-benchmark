@@ -2,12 +2,24 @@
 # Working directory where HPL and associated applications will be compiled.
 hpl_root: /opt/top500
 
+# Consider adding '-march=native -mtune=native' on Arm/x86.
+hpl_opts: "-flto=auto -O3"
+
 mpich_version: "4.3.2"
+
+# Consider adding '-march=native -mtune=native' on Arm/x86.
+mpich_env_cflags: "-flto=auto"
+mpich_env_cxxflags: "-flto=auto"
+mpich_env_fflags: "-flto=auto -fallow-argument-mismatch"
+mpich_env_ldflags: "-flto=auto"
 
 # Linear algebra library options.
 linear_algebra_library: blis  # 'atlas', 'openblas', or 'blis'
 linear_algebra_blis_version: master  # only used for blis
 linear_algebra_openblas_version: develop  # only used for openblas
+
+# Consider using `cortexa57` on arm64 systems. See:
+# https://github.com/flame/blis/blob/master/docs/ConfigurationHowTo.md
 blis_configure_options: ""
 
 # Home directory of the user for whom SSH keys will be configured.
