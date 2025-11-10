@@ -155,6 +155,7 @@ Here are a few of the results I've acquired in my testing (sorted by efficiency,
 | [Orange Pi CM4 (RK3566 4-core)](https://github.com/geerlingguy/top500-benchmark/issues/23) | Arm | 5.604 Gflops | 4.0W | 1.40 Gflops/W |
 | [DeskPi Super6c (6x CM4 @ 2.0 GHz)](https://www.jeffgeerling.com/blog/2022/pi-cluster-vs-ampere-altra-max-128-core-arm-cpu) | Arm | 70.338 Gflops | 51W | 1.38 Gflops/W |
 | Custom PC (AMD 5600x @ 3.7 GHz) | x86 | 229 Gflops | 196W | 1.16 Gflops/W |
+| [Minisforum MS-R1 (CIX P1 CD8180 @ 2.6 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/82) | Arm | 45.546 Gflops | 42W | 1.08 Gflops/W |
 | [Radxa Orion O6 (CIX P1 CD8180 @ 2.6 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/54) | Arm | 36.014 Gflops | 35.7W | 1.01 Gflops/W |
 | [HiFive Premier P550 (ESWIN EIC7700X @ 1.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/56) | RISC-V | 7.181 Gflops | 8.9W | 0.81 Gflops/W |
 | [DC-ROMA RISC-V Mainboard II (P550 @ 1.8 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/77) | RISC-V | 17.759 Gflops | 32.5W | 0.55 Gflops/W |
