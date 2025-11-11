@@ -109,6 +109,26 @@ ansible-playbook overclock-pi.yml
 
 Higher clock speeds require more power and thus more cooling, so if you are running a Pi cluster with just heatsinks, you may also require a fan blowing over them if running overclocked.
 
+### Tweaking BLIS configurations
+
+As I found in [testing on the Cix P1 SoC](https://github.com/geerlingguy/top500-benchmark/issues/54#issuecomment-3518774461), any time you make a change to BLIS or BLAS configuration, the best option is to recompile that _and_ HPL.
+
+For example, BLIS was automatically selecting a configuration for `armsve`, but I wanted to test the `cortexa57` configuration instead. When I did that (setting `blis_configure_options: "cortexa57"`), and recompiled BLIS, I didn't also delete the HPL configuration.
+
+Therefore, if recompiling BLIS, make sure you _also_ recompile HPL, or the changes won't affect your benchmark runs as you expect.
+
+Until I figure out how to automate this process, just run the following command after making changes to the configuration, to delete the appropriate files and trigger a recompile:
+
+```
+# Delete BLIS/HPL files directories.
+ansible cluster -m shell -a "rm -f /opt/top500/tmp/COMPILE_BLIS_COMPLETE && rm -f /opt/top500/tmp/COMPILE_HPL_COMPLETE && rm -rf /opt/top500/tmp/hpl-2.3 && rm -rf /opt/top500/blis" -b
+
+# Re-run the playbook with setup.
+ansible-playbook main.yml --tags "setup,benchmark"
+```
+
+I realized all this after discussing some poor benchmark results where BLIS, when configured with `auto`, would pick `armsve` for the newer Armv9 architecture on the Cix P1 SoC, where that chip doesn't implement [the 256+ bit support the `armsve` configuration expects](https://github.com/flame/blis/issues/641). So using the 'older' `cortexa57` configuration was much more performant. Switching between the two requires recompiling BLIS and HPL.
+
 ## Results
 
 Here are a few of the results I've acquired in my testing (sorted by efficiency, highest to lowest):
