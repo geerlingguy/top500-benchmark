@@ -149,8 +149,9 @@ Here are a few of the results I've acquired in my testing (sorted by efficiency,
 | [Ampere Altra Developer Platform (M96-28 @ 2.8 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/10) | Arm | 1,188.3 Gflops | 295W | 4.01 Gflops/W |
 | [M1 Max Mac Studio (1x M1 Max @ 3.2 GHz, in Docker)](https://github.com/geerlingguy/top500-benchmark/issues/4) | Arm | 264.32 Gflops | 66W | 4.00 Gflops/W |
 | [System76 Thelio Astra (Ampere Altra Max M128-30 @ 3.0 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/44) | Arm | 1,652.4 Gflops | 440W | 3.76 Gflops/W |
-| [Minisforum MS-R1 (CIX P1 CD8180 @ 2.6 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/82) | Arm | 141.61 Gflops | 40W | 3.54 Gflops/W |
+| [Minisforum MS-R1 (CIX P1 CD8180 @ 2.6 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/82) | Arm | 143.03 Gflops | 39W | 3.67 Gflops/W |
 | [Raspberry Pi CM5 (BCM2712 @ 2.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/48) | Arm | 32.152 Gflops | 9.2W | 3.49 Gflops/W |
+| [Radxa Orion O6 (CIX P1 CD8180 @ 2.6 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/54) | Arm | 124.42 Gflops | 35.7W | 3.49 Gflops/W |
 | [45Drives HL15 (Ampere Altra Q32-17 @ 1.7 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/25) | Arm | 332.07 Gflops | 100W | 3.32 Gflops/W |
 | [Turing Machines RK1 (RK3588 8-core)](https://github.com/geerlingguy/top500-benchmark/issues/22) | Arm | 59.810 Gflops | 18.1W | 3.30 Gflops/W |
 | [Raspberry Pi 500 (BCM2712 @ 2.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/50) | Arm | 35.586 Gflops | 11W | 3.24 Gflops/W |
@@ -176,7 +177,6 @@ Here are a few of the results I've acquired in my testing (sorted by efficiency,
 | [Orange Pi CM4 (RK3566 4-core)](https://github.com/geerlingguy/top500-benchmark/issues/23) | Arm | 5.604 Gflops | 4.0W | 1.40 Gflops/W |
 | [DeskPi Super6c (6x CM4 @ 2.0 GHz)](https://www.jeffgeerling.com/blog/2022/pi-cluster-vs-ampere-altra-max-128-core-arm-cpu) | Arm | 70.338 Gflops | 51W | 1.38 Gflops/W |
 | Custom PC (AMD 5600x @ 3.7 GHz) | x86 | 229 Gflops | 196W | 1.16 Gflops/W |
-| [Radxa Orion O6 (CIX P1 CD8180 @ 2.6 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/54) | Arm | 36.014 Gflops | 35.7W | 1.01 Gflops/W |
 | [HiFive Premier P550 (ESWIN EIC7700X @ 1.4 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/56) | RISC-V | 7.181 Gflops | 8.9W | 0.81 Gflops/W |
 | [DC-ROMA RISC-V Mainboard II (P550 @ 1.8 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/77) | RISC-V | 17.759 Gflops | 32.5W | 0.55 Gflops/W |
 | [Milk-V Mars CM (JH7110 4-core)](https://github.com/geerlingguy/top500-benchmark/issues/20) | RISC-V | 1.99 Gflops | 3.6W | 0.55 Gflops/W |
