@@ -165,6 +165,7 @@ Here are a few of the results I've acquired in my testing (sorted by efficiency,
 | [Framework Desktop Mainboard (AMD AI Max+ 395 @ 5.1 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/66) | x86 | 307.84 Gflops | 135.7W | 2.27 Gflops/W |
 | [Raspberry Pi CM4 (BCM2711 @ 1.5 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/33) | Arm | 11.433 Gflops | 5.2W | 2.20 Gflops/W |
 | [GMKtec NucBox G3 Plus (1x N150 @ 3.6 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/52) | Intel | 62.067 Gflops | 28.5W | 2.18 Glops/W |
+| [Framework 13 AMD (AMD Ryzen AI 340 @ 4.8 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/83) | AMD | 88.787 Gflops | 41.6W | 2.13 Gflops/W |
 | [Framework Desktop Cluster (4x AMD AI Max+ 395 @ 5.1 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/66) | x86 | 1,084 Gflops | 536.6 | 2.02 Gflops/W |
 | [Supermicro Ampere Altra (M128-30 @ 3.0 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/3) | Arm | 953.47 Gflops | 500W | 1.91 Gflops/W |
 | [Turing Pi 2 (4x CM4 @ 1.5 GHz)](https://www.jeffgeerling.com/blog/2021/turing-pi-2-4-raspberry-pi-nodes-on-mini-itx-board) | Arm | 44.942 Gflops | 24.5W | 1.83 Gflops/W |
