@@ -13,13 +13,13 @@
 
   tasks:
     - ansible.builtin.include_tasks: dependencies/rhel-based.yml
-      when: ansible_os_family == 'RedHat'
+      when: ansible_facts['os_family'] == 'RedHat'
 
     - ansible.builtin.include_tasks: dependencies/debian-based.yml
-      when: ansible_os_family == 'Debian'
+      when: ansible_facts['os_family'] == 'Debian'
 
     - ansible.builtin.include_tasks: dependencies/arch-based.yml
-      when: ansible_os_family == 'Archlinux'
+      when: ansible_facts['os_family'] == 'Archlinux'
 
     - name: Create required temporary directories.
       ansible.builtin.file:
@@ -214,7 +214,7 @@
     # If this is not done, the nodes will fail to connect to each other
     # causing the playbook to hang at 'Run the benchmark.'
     - include_tasks: tasks/firewall-configure.yml
-      when: ansible_os_family == "RedHat"
+      when: ansible_facts['os_family'] == "RedHat"
 
     - name: Run the benchmark.
       ansible.builtin.command: >-
@@ -225,7 +225,7 @@
       run_once: true
 
     - include_tasks: tasks/firewall-reset.yml
-      when: ansible_os_family == "RedHat"
+      when: ansible_facts['os_family'] == "RedHat"
 
     - name: Output the results.
       debug: var=mpirun_output.stdout
