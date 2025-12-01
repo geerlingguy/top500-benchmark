@@ -145,6 +145,7 @@ Here are a few of the results I've acquired in my testing (sorted by efficiency,
 | [Dell Pro Max with GB10 (Nvidia GB10 @ 3.9 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/79) | Arm | 675.39 Gflops | 155W | 4.36 Gflops/W |
 | [Radxa ROCK 5B (RK3588 8-core)](https://github.com/geerlingguy/top500-benchmark/issues/8) | Arm | 51.382 Gflops | 12W | 4.32 Gflops/W |
 | [Ampere Altra Developer Platform (M128-28 @ 2.8 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/17) | Arm | 1,265.5 Gflops | 296W | 4.27 Gflops/W |
+| [Dell Pro Max with GB10 (Nvidia GB10 x2)](https://github.com/geerlingguy/top500-benchmark/issues/79) | Arm | 1,333.2 Gflops | 320W | 4.17 Gflops/W |
 | [Orange Pi 5 Max (RK3588 8-core)](https://github.com/geerlingguy/top500-benchmark/issues/39) | Arm | 52.924 Gflops | 12.8W | 4.13 Gflops/W |
 | [Radxa ROCK 5C (RK3588S2 8-core)](https://github.com/geerlingguy/top500-benchmark/issues/32) | Arm | 49.285 Gflops | 12W | 4.11 Gflops/W |
 | [Ampere Altra Developer Platform (M96-28 @ 2.8 GHz)](https://github.com/geerlingguy/top500-benchmark/issues/10) | Arm | 1,188.3 Gflops | 295W | 4.01 Gflops/W |
