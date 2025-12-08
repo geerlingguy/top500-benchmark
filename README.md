@@ -28,8 +28,13 @@ Currently supported OSes:
   - Fedora (38+)
   - Arch Linux
   - Manjaro
+  - macOS (26+)
 
 Other OSes may need a few tweaks to work correctly. You can also run the playbook inside Docker (see the note under 'Benchmarking - Single Node'), but performance will be artificially limited.
+
+### Usage on macOS
+
+For macOS, this project assumes you already have [Homebrew](https://brew.sh) installed. Some dependencies installed with Homebrew override system defaults, and the playbook writes a `.zshenv` file to the Ansible user's home directory. If you don't use ZSH, you will need to create this file manually.
 
 ## Benchmarking - Cluster
 

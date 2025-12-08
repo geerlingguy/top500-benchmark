@@ -1,0 +1,17 @@
+---
+- name: Install dependencies (requires Homebrew).
+  community.general.homebrew:
+    name:
+      - gfortran
+      - gnu-tar
+    state: present
+
+- name: Update PATH for installed dependencies.
+  ansible.builtin.lineinfile:
+    path: "{{ ssh_user_home }}/.zshenv"
+    state: present
+    regexp: '^export\ PATH="\/opt\/homebrew.+$'
+    line: >-
+      export PATH="/opt/homebrew/bin:/opt/homebrew/opt/gnu-tar/libexec/gnubin:$PATH"
+    create: true
+    insertafter: EOF

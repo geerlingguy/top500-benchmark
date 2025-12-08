@@ -18,8 +18,9 @@ linear_algebra_library: blis  # 'atlas', 'openblas', or 'blis'
 linear_algebra_blis_version: master  # only used for blis
 linear_algebra_openblas_version: develop  # only used for openblas
 
-# Consider using `cortexa57` on arm64 systems. See:
-# https://github.com/flame/blis/blob/master/docs/ConfigurationHowTo.md
+# Force `cortexa57` on arm64 systems with SVE that lack 256+ bit support.
+# See: https://github.com/flame/blis/blob/master/docs/ConfigurationHowTo.md
+# Defaults to 'auto'.
 blis_configure_options: ""
 
 # Home directory of the user for whom SSH keys will be configured.
@@ -31,6 +32,9 @@ ram_in_gb: "{{ ( ansible_memtotal_mb / 1024 * 0.75 ) | int | abs }}"
 
 # Count the nodes for accurate HPL.dat calculations.
 nodecount: "{{ ansible_play_hosts | length | int }}"
+
+# Number of CPU cores for compilation.
+compile_nproc: "{{ ansible_processor_nproc }}"
 
 # HPL.dat configuration options.
 # See: https://www.advancedclustering.com/act_kb/tune-hpl-dat-file/
