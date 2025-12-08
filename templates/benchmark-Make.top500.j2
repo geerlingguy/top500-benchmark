@@ -166,7 +166,7 @@ HPL_LIBS     = $(HPLlib) $(LAlib) $(MPlib)
 #    *) call the BLAS Fortran 77 interface,
 #    *) not display detailed timing information.
 #
-HPL_OPTS     = -flto=auto -O3
+HPL_OPTS     = {{ hpl_opts }}
 #
 # ----------------------------------------------------------------------
 #
