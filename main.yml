@@ -141,7 +141,7 @@
         path: "{{ ssh_user_home }}/.ssh"
         state: directory
         owner: "{{ ssh_user }}"
-        group: "{{ ssh_user }}"
+        group: "{{ ssh_group }}"
         mode: 0700
 
     - name: Generate an OpenSSH keypair.

@@ -25,6 +25,7 @@ blis_configure_options: ""
 
 # Home directory of the user for whom SSH keys will be configured.
 ssh_user: pi
+ssh_group: "{{ ssh_user }}"
 ssh_user_home: /home/pi
 
 # Specify manually if needed for mixed-RAM-capacity clusters.
