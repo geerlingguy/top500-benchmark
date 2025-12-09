@@ -54,7 +54,7 @@
         - FFLAGS: "{{ mpich_env_fflags }}"
         - LDFLAGS: "{{ mpich_env_ldflags }}"
       loop:
-        - ./configure --enable-fast=O3,ndebug --enable-g=none --prefix="{{ hpl_root }}/mpich" --with-device=ch3:sock
+        - ./configure --enable-fast=O3,ndebug --enable-g=none --prefix="{{ hpl_root }}/mpich" --with-device={{ mpich_with_device }}
         - "make -j{{ compile_nproc }}"
 
     - name: Install MPI.

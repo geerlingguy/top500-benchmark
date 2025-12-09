@@ -12,6 +12,7 @@ mpich_env_cflags: "-flto=auto"
 mpich_env_cxxflags: "-flto=auto"
 mpich_env_fflags: "-flto=auto -fallow-argument-mismatch"
 mpich_env_ldflags: "-flto=auto"
+mpich_with_device: "ch3:nemesis"
 
 # Linear algebra library options.
 linear_algebra_library: blis  # 'atlas', 'openblas', or 'blis'
