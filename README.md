@@ -148,6 +148,7 @@ Here are a few of the results I've acquired in my testing (sorted by efficiency,
 | [Radxa Dragon Q6A (Qualcomm QCS6490)](https://github.com/geerlingguy/top500-benchmark/issues/88) | Arm | 48.408 Gflops | 10.1W | 4.79 Gflops/W |
 | [Ampere Altra Dev Kit (Q64-22)](https://github.com/geerlingguy/top500-benchmark/issues/19) | Arm | 655.90 Gflops | 140W | 4.69 Gflops/W |
 | [Orange Pi 5 (RK3588S 8-core)](https://github.com/geerlingguy/top500-benchmark/issues/14) | Arm | 53.333 Gflops | 11.5W | 4.64 Gflops/W |
+| [4x Mac Studio (M3 Ultra 32-core)](https://github.com/geerlingguy/top500-benchmark/issues/92) | Arm | 3,504.1 Gflops | 790W | 4.44 Gflops/W |
 | [Supermicro AmpereOne (A192-32X)](https://github.com/geerlingguy/top500-benchmark/issues/43) | Arm | 3,026.9 Gflops | 692W | 4.37 Gflops/W |
 | [Dell Pro Max with GB10 (Nvidia GB10)](https://github.com/geerlingguy/top500-benchmark/issues/79) | Arm | 675.39 Gflops | 155W | 4.36 Gflops/W |
 | [Radxa ROCK 5B (RK3588 8-core)](https://github.com/geerlingguy/top500-benchmark/issues/8) | Arm | 51.382 Gflops | 12W | 4.32 Gflops/W |
