@@ -11,7 +11,7 @@
     chdir: "{{ hpl_root }}/tmp/openblas-build"
     creates: "{{ hpl_root }}/tmp/COMPILE_OPENBLAS_COMPLETE"
   loop:
-    - make -j{{ ansible_processor_vcpus }}
+    - make -j{{ ansible_facts['processor_vcpus'] }}
     - make PREFIX="{{ hpl_root }}/openblas" install
   become: true
 
