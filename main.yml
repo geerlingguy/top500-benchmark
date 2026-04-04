@@ -168,7 +168,7 @@
 
     - name: Generate list of host IP addresses.
       ansible.builtin.set_fact:
-        host_ips: "{{ host_ips + [ hostvars[item].ansible_default_ipv4.address ] }}"
+        host_ips: "{{ host_ips + [ hostvars[item].ansible_facts.default_ipv4.address ] }}"
       loop: "{{ groups['cluster'] }}"
 
     - name: Accept hostkeys for each host on each host.
@@ -181,7 +181,7 @@
         path: /etc/hosts
         marker: "# {mark} Ansible MPI host {{ item }}"
         block: |
-          {{ hostvars[item].ansible_default_ipv4.address }} {{ item }} {{ item | replace('.local', '') }}
+          {{ hostvars[item].ansible_facts.default_ipv4.address }} {{ item }} {{ item | replace('.local', '') }}
       loop: "{{ groups['cluster'] }}"
       become: true
 
@@ -211,7 +211,7 @@
 
     - name: Generate list of host IP addresses.
       ansible.builtin.set_fact:
-        host_ips: "{{ host_ips + [ hostvars[item].ansible_default_ipv4.address ] }}"
+        host_ips: "{{ host_ips + [ hostvars[item].ansible_facts.default_ipv4.address ] }}"
       loop: "{{ groups['cluster'] }}"
 
     # If this is not done, the nodes will fail to connect to each other

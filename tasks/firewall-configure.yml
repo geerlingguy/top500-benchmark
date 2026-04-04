@@ -21,7 +21,7 @@
     state: enabled
     permanent: true
   loop: "{{ host_ips }}"
-  when: item != ansible_default_ipv4.address
+  when: item !=.ansible_facts.default_ipv4.address
   become: true
 
 - name: Restarting firewall for changes to take effect.
