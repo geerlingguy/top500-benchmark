@@ -30,13 +30,13 @@ ssh_group: "{{ ssh_user }}"
 ssh_user_home: /home/pi
 
 # Specify manually if needed for mixed-RAM-capacity clusters.
-ram_in_gb: "{{ ( ansible_memtotal_mb / 1024 * 0.75 ) | int | abs }}"
+ram_in_gb: "{{ ( ansible_facts['memtotal_mb'] / 1024 * 0.75 ) | int | abs }}"
 
 # Count the nodes for accurate HPL.dat calculations.
 nodecount: "{{ ansible_play_hosts | length | int }}"
 
 # Number of CPU cores for compilation.
-compile_nproc: "{{ ansible_processor_nproc }}"
+compile_nproc: "{{ ansible_facts['processor_nproc'] }}"
 
 # HPL.dat configuration options.
 # See: https://www.advancedclustering.com/act_kb/tune-hpl-dat-file/
