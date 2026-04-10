@@ -143,6 +143,7 @@ Here are a few of the results I've acquired in my testing (sorted by efficiency,
 | [Mac mini (M4, in Docker)](https://github.com/geerlingguy/top500-benchmark/issues/47) | Arm | 299.93 Gflops | 39.6W | 7.57 Gflops/W |
 | [Mac Studio (M3 Ultra 32-core)](https://github.com/geerlingguy/top500-benchmark/issues/89) | Arm | 1,278.6 Gflops | 213W | 6.00 Gflops/W |
 | [Mac Studio (M4 Max, in Docker)](https://github.com/geerlingguy/top500-benchmark/issues/57) | Arm | 685.00 Gflops | 120W | 5.71 Gflops/W |
+| [MacBook Neo (A18 Pro)](https://github.com/geerlingguy/top500-benchmark/issues/95) | Arm | 57.012 Gflops | 10.6W | 5.38 Gflops/W |
 | [Radxa CM5 (RK3588S2 8-core)](https://github.com/geerlingguy/top500-benchmark/issues/31) | Arm | 48.619 Gflops | 10W | 4.86 Gflops/W |
 | [Supermicro AmpereOne (A192-26X)](https://github.com/geerlingguy/top500-benchmark/issues/43) | Arm | 2,745.1 Gflops | 570W | 4.82 Gflops/W |
 | [Radxa Dragon Q6A (Qualcomm QCS6490)](https://github.com/geerlingguy/top500-benchmark/issues/88) | Arm | 48.408 Gflops | 10.1W | 4.79 Gflops/W |
