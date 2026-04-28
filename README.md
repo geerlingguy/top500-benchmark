@@ -180,6 +180,7 @@ Here are a few of the results I've acquired in my testing (sorted by efficiency,
 | [Framework 13 MetaComputing AI PC (Cix P1 CP8180)](https://github.com/geerlingguy/top500-benchmark/issues/94) | Arm | 56.391 Gflops | 26.4W | 2.14 Gflops/W |
 | [Framework 13 AMD (AMD Ryzen AI 340)](https://github.com/geerlingguy/top500-benchmark/issues/83) | AMD | 88.787 Gflops | 41.6W | 2.13 Gflops/W |
 | [Framework Desktop Cluster (4x AMD AI Max+ 395)](https://github.com/geerlingguy/top500-benchmark/issues/66) | x86 | 1,084 Gflops | 536.6 | 2.02 Gflops/W |
+| [DeskPi Super4C (4x CM5)](https://github.com/geerlingguy/top500-benchmark/issues/96) | Arm | 138.57 Gflops | 69.5W | 1.99 Gflops/W |
 | [Supermicro Ampere Altra (M128-30)](https://github.com/geerlingguy/top500-benchmark/issues/3) | Arm | 953.47 Gflops | 500W | 1.91 Gflops/W |
 | [Turing Pi 2 (4x CM4)](https://www.jeffgeerling.com/blog/2021/turing-pi-2-4-raspberry-pi-nodes-on-mini-itx-board) | Arm | 44.942 Gflops | 24.5W | 1.83 Gflops/W |
 | [Sipeed NanoCluster (4x CM5)](https://github.com/geerlingguy/top500-benchmark/issues/63) | Arm | 112.25 Gflops | 62W | 1.81 Gflops/W |
@@ -189,7 +190,6 @@ Here are a few of the results I've acquired in my testing (sorted by efficiency,
 | [Turing Pi 2 (4x CM4)](https://www.jeffgeerling.com/blog/2021/turing-pi-2-4-raspberry-pi-nodes-on-mini-itx-board) | Arm | 51.327 Gflops | 33W | 1.54 Gflops/W |
 | [DeskPi Super6c (6x CM4)](https://www.jeffgeerling.com/blog/2022/pi-cluster-vs-ampere-altra-max-128-core-arm-cpu) | Arm | 60.293 Gflops | 40W | 1.50 Gflops/W |
 | [Orange Pi CM4 (RK3566 4-core)](https://github.com/geerlingguy/top500-benchmark/issues/23) | Arm | 5.604 Gflops | 4.0W | 1.40 Gflops/W |
-| [DeskPi Super6c (6x CM4)](https://www.jeffgeerling.com/blog/2022/pi-cluster-vs-ampere-altra-max-128-core-arm-cpu) | Arm | 70.338 Gflops | 51W | 1.38 Gflops/W |
 | Custom PC (AMD 5600X) | x86 | 229 Gflops | 196W | 1.16 Gflops/W |
 | [HiFive Premier P550 (ESWIN EIC7700X)](https://github.com/geerlingguy/top500-benchmark/issues/56) | RISC-V | 7.181 Gflops | 8.9W | 0.81 Gflops/W |
 | [DC-ROMA RISC-V Mainboard II (P550)](https://github.com/geerlingguy/top500-benchmark/issues/77) | RISC-V | 17.759 Gflops | 32.5W | 0.55 Gflops/W |
