@@ -28,8 +28,8 @@
       ansible.builtin.file:
         path: "{{ item }}"
         state: directory
-        owner: "{{ hpl_root_owner | default(ansible_user) | default(ansible_env.USER, true) | default(ansible_user_id, true) }}"
-        group: "{{ hpl_root_group | default(ansible_user) | default(ansible_env.USER, true) | default(ansible_user_id, true) }}"
+        owner: "{{ hpl_root_owner | default(ansible_user) | default(ansible_facts['env']['USER'], true) | default(ansible_facts['user_id'], true) }}"
+        group: "{{ hpl_root_group | default(ansible_user) | default(ansible_facts['env']['USER'], true) | default(ansible_facts['user_id'], true) }}"
         mode: 0755
       loop:
         - "{{ hpl_root }}/tmp"
