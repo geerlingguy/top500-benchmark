@@ -4,6 +4,7 @@
     name:
       - gfortran
       - gnu-tar
+      - llvm
     state: present
 
 - name: Update PATH for installed dependencies.

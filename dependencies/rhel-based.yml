@@ -11,5 +11,6 @@
       - gcc-gfortran
       # Fedora doesn't install this with the Development Tools group.
       - gcc-g++
+      - clang
     state: present
   become: true

@@ -23,6 +23,7 @@ linear_algebra_openblas_version: develop  # only used for openblas
 # See: https://github.com/flame/blis/blob/master/docs/ConfigurationHowTo.md
 # Defaults to 'auto'.
 blis_configure_options: ""
+blis_cc: "gcc"  # Use 'clang' on newer platforms if you have issues with `gcc`
 
 # Home directory of the user for whom SSH keys will be configured.
 ssh_user: pi
