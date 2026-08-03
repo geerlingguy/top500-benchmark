@@ -141,6 +141,7 @@ Here are a few of the results I've acquired in my testing (sorted by efficiency,
 | Configuration | Architecture | Result | Wattage | Gflops/W |
 |--- |--- |--- |--- |--- |
 | [Mac mini (M4, in Docker)](https://github.com/geerlingguy/top500-benchmark/issues/47) | Arm | 299.93 Gflops | 39.6W | 7.57 Gflops/W |
+| [Dell XPS 13 (Intel Core 5 320)](https://github.com/geerlingguy/top500-benchmark/issues/102) | x86 | 127.91 Gflops | 20.6W | 6.21 Gflops/W |
 | [Mac Studio (M3 Ultra 32-core)](https://github.com/geerlingguy/top500-benchmark/issues/89) | Arm | 1,278.6 Gflops | 213W | 6.00 Gflops/W |
 | [Mac Studio (M4 Max, in Docker)](https://github.com/geerlingguy/top500-benchmark/issues/57) | Arm | 685.00 Gflops | 120W | 5.71 Gflops/W |
 | [MacBook Neo (A18 Pro)](https://github.com/geerlingguy/top500-benchmark/issues/95) | Arm | 57.012 Gflops | 10.6W | 5.38 Gflops/W |
